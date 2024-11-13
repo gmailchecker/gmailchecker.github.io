@@ -21786,7 +21786,7 @@ function getCookie(name)
 				return;
 			}
 			if (mails.filter(x => x).length > 5000){
-				abp.notify.error(" ❌ Limit Exceeded!");
+				abp.notify.error(" ❌ Max = 5000 ");
 				return;
 			}
 			transactionId = null;
