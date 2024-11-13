@@ -21825,7 +21825,7 @@ function getCookie(name)
             	return;
             }*/
 			
-            let smallParts = chunk(mails, 25);
+            let smallParts = chunk(mails, 50);
             checkMails(smallParts, mails.length);
         });
 })();
@@ -21853,7 +21853,7 @@ async function checkMails(smallParts, totalNeedCheck) {
             result = await requestCheckMails(mails);
             if (result === false) {
                 abp.notify.info(" 📢 Server is busy! Please Wait...");
-                await sleep(5000);
+                await sleep(1);
                 continue;
             } else {
                 break;
