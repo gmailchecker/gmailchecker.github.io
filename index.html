@@ -21785,8 +21785,8 @@ function getCookie(name)
 				abp.notify.error(" ❌ Please Input Gmail Address !");
 				return;
 			}
-			if (mails.filter(x => x).length > 5000){
-				abp.notify.error(" ❌ Max = 5000 ");
+			if (mails.filter(x => x).length > 15000){
+				abp.notify.error(" ❌ Max = 15000 ");
 				return;
 			}
 			transactionId = null;
