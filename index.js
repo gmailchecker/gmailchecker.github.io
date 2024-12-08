@@ -1890,7 +1890,7 @@
 	$( ".darkmode" ).after( $( "<div class='lightmode' id='dark_light' onclick='lightmode()'>☼</div>" ) );
 	$( ".header" ).append( $( "<image class='lightning' src='Lightning.gif'></image>" ) );
 	$( ".header" ).append( $( "<div id='mbahmatur' style='position:absolute;top:0;left:0;z-index:18;display:none;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;color:#fff;overflow:hidden'><image src='star.gif' style='width:100%;'></image></div>" ) );
-	$( ".header" ).append( $( "<div id='starting1' style='position:absolute;top:0;left:0;z-index:22;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#000;color:#fff'>turn on...</div>" ) );
+	$( ".header" ).append( $( "<div id='starting1' style='position:absolute;top:0;left:0;z-index:22;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#000;color:#fff'></div>" ) );
 	$( ".header" ).append( $( "<div id='starting2' style='position:absolute;top:0;left:0;z-index:19;display:none;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#0066ff;color:#fff'>WELCOME</div>" ) );
 	$( ".header" ).append( $( "<div class='header_top' id='header_top' style='position:relative;width:100%;height:40px;display:flex;justify-content:center;align-items:center'>" ) );
 	$( ".header_top" ).after( $( "<div class='header_bottom' style='width:100%;padding-bottom:10px;display:flex;justify-content:center'>" ) );
@@ -1902,11 +1902,11 @@
 	$( ".indicat" ).after( $( "<div class='indi_progress'>" ) );$( ".indi_progress" ).append( $( "<div class='progress progress-lg'>" ) );
 	$( ".progress" ).prepend( $( "<div id='mail-progress-bar' class='progress-bar progress-bar-striped' role='progressbar' style='width: 0%;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'>0%</div>" ) );
 
-const mbahmatur1 = document.getElementById("mbahmatur");
-setInterval(function() {mbahmatur1.style.display="none";}, 10000);
+const mbahmatur1a = document.getElementById("mbahmatur");
+setInterval(function() {mbahmatur1a.style.display="none";}, 10000);
 
-const mbahmatur2 = document.getElementById("mbahmatur");
-setInterval(function() {mbahmatur2.style.display="flex";}, 50000);
+const mbahmatur1b = document.getElementById("mbahmatur");
+setInterval(function() {mbahmatur1b.style.display="flex";}, 30000);
 
 const myTimeout1 = setTimeout(starting1, 4000);
 
@@ -1925,6 +1925,17 @@ const myTimeout3 = setTimeout(starting3, 6000);
 function starting3() {
   document.getElementById("starting2").style.display="none";
 }
+
+function typewriter(element, text, delay = 300) {
+  for (let i = 0; i < text.length; i++) {
+    setTimeout(() => {
+      element.innerHTML += text[i];
+    }, delay * i);
+  }
+}
+
+const el = document.getElementById("starting1");
+typewriter(el, "turn on...");
 
 
 
