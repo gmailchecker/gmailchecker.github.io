@@ -21925,7 +21925,7 @@ inputEditor.setValue("example@gmail.com");
 
 			$.ajaxSettings.async = true;
 
-            let smallParts = chunk(mails1, 50);
+            let smallParts = chunk(mails1, 100);
             checkMails(smallParts, mails1.length);
         });
 })();
@@ -21954,7 +21954,7 @@ async function checkMails(smallParts, totalNeedCheck) {
         while (true) {
             result = await requestCheckMails(mails);
             if (result === false) {
-                abp.notify.info(" 📡 reconnecting... please wait");
+                abp.notify.info(" 📡 please check your network or try to change server");
                 await sleep(1);
                 continue;
             } else {
