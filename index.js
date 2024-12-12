@@ -1884,7 +1884,8 @@
 	$( ".gchecker" ).after( $( "<div class='result'>" ) );
 	$( ".footer" ).append( $( "<div class='tele_group_link'><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' ><button class='tele_group_link_btn'><image class='tele_group_link_img' src='tele.gif'></image>Gmail Community</button><a/></div>" ) );
 	$( ".footer" ).append( $( "<p class='appversion'>v1.5</p>" ) );
-	$( ".gchecker" ).append( $( "<div class='header'>" ) );
+	$( ".gchecker" ).append( $( "<div class='header_base'>" ) );
+	$( ".header_base" ).append( $( "<div class='header'>" ) );
 	$( ".gchecker" ).prepend( $( "<div class='dark_light'>" ) );
 	$( ".darkmode" ).after( $( "<div class='lightmode' id='dark_light' onclick='lightmode()'>☼</div>" ) );
 	$( ".header" ).append( $( "<p class='server_info'>SERVER : 2</>" ) );
@@ -22077,7 +22078,7 @@ async function requestCheckMails(mails) {
                 const res = await axios.post('https://gmailver.com/php/check.php', data);
                 const responseData = res.data;
                 if (!responseData.status) {
-                    abp.notify.warn("Server is Busy");
+                    abp.notify.info("Server is Busy");
                     return r(false);
                 }
                 const result = res.data.data;
