@@ -21948,7 +21948,7 @@ async function checkMails(smallParts, totalNeedCheck) {
             result = await requestCheckMails(mails);
             if (result === false) {
                 abp.notify.info(" 📡 network error! please check your network or try to change server...");
-                await sleep(1);
+                await sleep(2500);
                 continue;
             } else {
                 break;
