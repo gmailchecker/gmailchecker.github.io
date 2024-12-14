@@ -21837,10 +21837,6 @@ $("#rp-disabled").text(" - ")
     $(document).on("click",
         "#clear-editor",
         function() {
-			document.querySelector('.mailoutput .CodeMirror-linenumber').style.display="none";
-			document.querySelector('.mailoutput1 .CodeMirror-linenumber').style.display="none";
-			document.querySelector('.mailoutput2 .CodeMirror-linenumber').style.display="none";
-			document.querySelector('.mailoutput3 .CodeMirror-linenumber').style.display="none";
             inputEditor.setValue("");
 			goodEditor.setValue("");
 			verEditor.setValue("");
@@ -21857,10 +21853,6 @@ $("#rp-disabled").text(" - ")
 	$(document).on("click",
         "#check-btn",
         function() {
-			document.querySelector('.mailoutput .CodeMirror-linenumber').style.display="block";
-			document.querySelector('.mailoutput1 .CodeMirror-linenumber').style.display="block";
-			document.querySelector('.mailoutput2 .CodeMirror-linenumber').style.display="block";
-			document.querySelector('.mailoutput3 .CodeMirror-linenumber').style.display="block";
 			goodEditor.setValue("");
 			verEditor.setValue("");
 			notExistEditor.setValue("");
