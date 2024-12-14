@@ -1893,7 +1893,7 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( ".header" ).append( $( "<div id='mbahmatur' style='position:absolute;top:0;left:0;z-index:18;display:none;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;color:#fff;overflow:hidden'><image src='star.gif' style='width:100%;'></image></div>" ) );
 	$( ".header" ).append( $( "<div id='starting1' style='position:absolute;top:0;left:0;z-index:99;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#000;color:#fff'></div>" ) );
 	$( ".header" ).append( $( "<div id='starting2' style='position:absolute;top:0;left:0;z-index:98;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#0066ff;color:#fff'></div>" ) );
-	$( ".header" ).append( $( "<div class='header_top' id='header_top' style='position:relative;width:100%;height:50%;display:flex;justify-content:center;align-items:center;'>" ) );
+	$( ".header" ).append( $( "<div class='header_top' id='header_top' style='position:relative;width:100%;height:50%;display:flex;justify-content:center;align-items:center;margin-top:15px'>" ) );
 	$( ".header_top" ).after( $( "<div class='header_bottom' style='width:100%;height:50%;padding-bottom:20px;display:flex;justify-content:center;'>" ) );
 	$( ".header_top" ).before( $( "<marquee id='maranoun' style='display:none;position:absolute;top:0;left:0;width:100%;height:10px;background:#000;color:yellow;font-size:8px;line-height:8px'> 📢 DOWNLOAD(LIVE) button has been fixed </marquee>" ) );	
 	$( ".header_top" ).append( $( "<div class='g_checker_logo'> <image class='g_checker_logo_img' src='gmail-checker.png'></image></div>" ) );
@@ -20675,7 +20675,7 @@ const stylecss = document.createElement('link');
 	stylecss.setAttribute("rel", "stylesheet");
     document.head.appendChild(stylecss);
 
-$('<style>').text( " *{margin:0;padding:0;box-sizing:border-box;}*,*:before,*:after{box-sizing: inherit;}html{-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;box-sizing:border-box; }html,body{font-family:Verdana,sans-serif;font-size:14px;line-height:1.5;}html::-webkit-scrollbar,.element::-webkit-scrollbar{display: none;}a{text-decoration: none;background:0 0}mark{background:#ff0;color:#000}img{border-style: none;}@media print{*{text-shadow:none!important;color:#000!important;background:0 0!important;box-shadow:none!important}}body{display:flex;padding:0;margin:0;color:#d9d9d9;font-size:12px;background:#000}.spinner{zoom:100%;}.spinner div div{background:#00cc99!important;}@keyframes slideup {from {bottom: -1200px;}to {bottom: 0px;}}.btn-primary{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn_mob{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn{padding:10px;cursor: pointer;color:#4d4d4d;}.download_btn{padding:5px;cursor: pointer;}hr{width:100%;border: 2px #8c8c8c;border-style:inset;margin: 25px 0px 25px 0px;}.flexi{display:flex;position:absolute;top:0;left:0;width:100%;height:100%;justify-content:center; align-items:center;}@media screen and (min-width: 1200px){.tele_group_link{display:flex!important;}.indicator{display:flex!important;}hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}.download-result{position:relative!important;box-shadow:none!important;padding:0px!important;} .solid2{display:block!important;}}@media screen and (max-width: 767px) {.download-result{border-radius:25px 25px 0px 0px;}.gchecker {border-radius:0!important;width:100%!important;} .result {width:100%!important;border-radius:0!important;border:none!important;} .download-result .hidedown{position:absolute;right:0; display:flex;background:#666666;align-items:center;justify-content:center;width:30px;height:30px;border:2px #8c8c8c;border-style:outset;color:#ff0066;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px;}.download-result .showdown{position:absolute;right:0; display:flex;padding-bottom:10px; background:#666666;align-items:center;justify-content:center;width:30px;height:30px;padding-top:5px;border:2px #8c8c8c;border-style:outset;color:#00ffff;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px; }.check_btn_mob{display:block!important;}  } @media screen and (max-width: 1199px) and (min-width: 768px){.gchecker {border-radius:0!important;width:100%!important;}.tele_group_link{display:flex!important;}.indicator{display:flex!important;}.solid2{display:block!important;}.download-result{position:relative!important;box-shadow:none!important; padding:0px!important;} hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}::-webkit-scrollbar {width: 2px!important;}}@media screen and (max-width: 350px) {body {zoom:80%}}" ).appendTo(document.head);
+$('<style>').text( " *{margin:0;padding:0;box-sizing:border-box;}*,*:before,*:after{box-sizing: inherit;}html{-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;box-sizing:border-box; }html,body{font-family:Verdana,sans-serif;font-size:14px;line-height:1.5;}html::-webkit-scrollbar,.element::-webkit-scrollbar{display: none;}a{text-decoration: none;background:0 0}mark{background:#ff0;color:#000}img{border-style: none;}@media print{*{text-shadow:none!important;color:#000!important;background:0 0!important;box-shadow:none!important}}body{display:flex;padding:0;margin:0;color:#d9d9d9;font-size:12px;background:#000}.spinner{zoom:100%;}.spinner div div{background:#00cc99!important;}@keyframes slideup {from {bottom: -1025px;}to {bottom: 0px;}}.btn-primary{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn_mob{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn{padding:10px;cursor: pointer;color:#4d4d4d;}.download_btn{padding:5px;cursor: pointer;}hr{width:100%;border: 2px #8c8c8c;border-style:inset;margin: 25px 0px 25px 0px;}.flexi{display:flex;position:absolute;top:0;left:0;width:100%;height:100%;justify-content:center; align-items:center;}@media screen and (min-width: 1025px){.tele_group_link{display:flex!important;}.indicator{display:flex!important;}hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}.download-result{position:relative!important;box-shadow:none!important;padding:0px!important;} .solid2{display:block!important;}}@media screen and (max-width: 767px) {.download-result{border-radius:25px 25px 0px 0px;}.gchecker {border-radius:0!important;width:100%!important;} .result {width:100%!important;border-radius:0!important;border:none!important;} .download-result .hidedown{position:absolute;right:0; display:flex;background:#666666;align-items:center;justify-content:center;width:30px;height:30px;border:2px #8c8c8c;border-style:outset;color:#ff0066;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px;}.download-result .showdown{position:absolute;right:0; display:flex;padding-bottom:10px; background:#666666;align-items:center;justify-content:center;width:30px;height:30px;padding-top:5px;border:2px #8c8c8c;border-style:outset;color:#00ffff;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px; }.check_btn_mob{display:block!important;}  } @media screen and (max-width: 1199px) and (min-width: 768px){.gchecker {border-radius:0!important;width:100%!important;}.tele_group_link{display:flex!important;}.indicator{display:flex!important;}.solid2{display:block!important;}.download-result{position:relative!important;box-shadow:none!important; padding:0px!important;} hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}::-webkit-scrollbar {width: 2px!important;}}@media screen and (max-width: 350px) {body {zoom:80%}}" ).appendTo(document.head);
 
 document.querySelector(".flexi").addEventListener("contextmenu", (e) => {e.preventDefault()});
 
@@ -21759,7 +21759,7 @@ function showdown(){document.querySelector(".tele_group_link").style.display="no
 document.querySelector(".download-result").style.animation="slideup 0.75s"; document.querySelector(".hidedown").style.display="flex";document.querySelector(".solid2").style.display="none";document.querySelector(".showdown").style.display="none";}
 
 	$( ".gchecker" ).prepend( $( "<div class='mailinput'>" ) );
-	$( ".mailinput" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%'>GMAIL INPUT</p></h3>" ) );
+	$( ".mailinput" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100% ;position:absolute;'>GMAIL INPUT</p></h3>" ) );
 	$( ".mailinput" ).prepend( $( "<div class='btn-executor' id='btn-executor' style='display:none'></div>" ) );
 	$( ".btn-executor" ).append( $( "<button onClick='clear_all()' id='clear-editor' class='btn-primary'>CLEAR</button>" ) );;
 	$( "#clear-editor" ).after( $( "<button onClick='clear_all_run()' id='check-btn' class='check_btn'>START</button>" ) );
@@ -21769,25 +21769,25 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( ".mailinput h3" ).after( $( "<button onclick='paste()' id='paste_clip'>📋 PASTE</button>" ) );
 	$( ".mailinput h3" ).after( $( "<textarea style='display:none' id='mail-input' ></textarea>" ) );
 	$( ".result" ).append( $( "<div class='mailoutput'>" ) );
-	$( ".mailoutput" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%'>GOOD  <span id='good_res'></span></p></h3>" ) );
+	$( ".mailoutput" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;'>GOOD  <span id='good_res'></span></p></h3>" ) );
 	$( ".mailoutput h3" ).append( $( "<div class='result_btn' style='display:flex;width:100%;justify-content:right;align-items:center;'>" ) );
 	$( ".result_btn" ).append( $( "<button onclick='copy_good()' class='copy_clip' id='copy_clip'>📝 COPY</button>" ) );
 	$( "#copy_clip" ).before( $( "<button onclick='downloadFile(&#39;good&#39;)' class='download_item' id='download_item' >DOWNLOAD</button>" ) );
 	$( ".mailoutput h3" ).after( $( "<textarea style='display:none' id='mail-output'></textarea>" ) );
 	$( ".mailoutput" ).after( $( "<div class='mailoutput1'>" ) );
-	$( ".mailoutput1" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%'>VER  <span id='ver_res'></span></p></h3>" ) );
+	$( ".mailoutput1" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;'>VER  <span id='ver_res'></span></p></h3>" ) );
 	$( ".mailoutput1 h3" ).after( $( "<textarea style='display:none' id='ver-output'></textarea>" ) );
 	$( ".mailoutput1 h3" ).append( $( "<div class='result_btn1' style='display:flex;width:100%;justify-content:right;align-items:center;'>" ) );
 	$( ".result_btn1" ).append( $( "<button onclick='copy_ver()' class='copy_clip' id='copy_clip1'>📝 COPY</button>" ) );
 	$( "#copy_clip1" ).before( $( "<button onclick='downloadFile(&#39;ver&#39;)' class='download_item' id='download_item' >DOWNLOAD</button>" ) );
 	$( ".mailoutput1" ).after( $( "<div class='mailoutput2'>" ) );
-	$( ".mailoutput2" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%'>DISABLED  <span id='dis_res'></span></p></h3>" ) );
+	$( ".mailoutput2" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;'>DISABLED  <span id='dis_res'></span></p></h3>" ) );
 	$( ".mailoutput2 h3" ).after( $( "<textarea style='display:none' id='disable-output'></textarea>" ) );
 	$( ".mailoutput2 h3" ).append( $( "<div class='result_btn2' style='display:flex;width:100%;justify-content:right;align-items:center;'>" ) );
 	$( ".result_btn2" ).append( $( "<button onclick='copy_disable()' class='copy_clip' id='copy_clip2'>📝 COPY</button>" ) );
 	$( "#copy_clip2" ).before( $( "<button onclick='downloadFile(&#39;disable&#39;)' class='download_item' id='download_item' >DOWNLOAD</button>" ) );
 	$( ".mailoutput2" ).after( $( "<div class='mailoutput3'>" ) );
-	$( ".mailoutput3" ).prepend( $( "<h3 style='display:flex;align-items:center;height:50px'><p style='width:100%'>NOT FOUND  <span id='notfound_res'></span></p></h3>" ) );
+	$( ".mailoutput3" ).prepend( $( "<h3 style='display:flex;align-items:center;height:50px'><p style='width:100%;position:absolute;'>NOT FOUND  <span id='notfound_res'></span></p></h3>" ) );
 	$( ".mailoutput3 h3" ).after( $( "<textarea style='display:none' id='notExist-output'></textarea>" ) );
 	$( ".mailoutput3 h3" ).append( $( "<div class='result_btn3' style='display:flex;width:100%;justify-content:right;align-items:center;'>" ) );
 
@@ -22023,7 +22023,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         goodEditor.setValue(goodValue.join("\n"));
 		
-		var goodScreen = window.matchMedia("(min-width: 1200px)");
+		var goodScreen = window.matchMedia("(min-width: 1025px)");
 		if (goodScreen.matches){
 		goodEditor.setCursor(goodEditor.lineCount(), 0);
 		}
@@ -22034,7 +22034,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         verEditor.setValue(verValue.join("\n"));
 		
-		var verScreen = window.matchMedia("(min-width: 1200px)");
+		var verScreen = window.matchMedia("(min-width: 1025px)");
 		if (verScreen.matches){
 		verEditor.setCursor(verEditor.lineCount(), 0);
 		}
@@ -22045,7 +22045,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         notExistEditor.setValue(notExistValue.join("\n"));
 		
-		var notExistScreen = window.matchMedia("(min-width: 1200px)");
+		var notExistScreen = window.matchMedia("(min-width: 1025px)");
 		if (notExistScreen.matches){
 		notExistEditor.setCursor(notExistEditor.lineCount(), 0);
 		}	
@@ -22056,7 +22056,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         disableEditor.setValue(disableValue.join("\n"));
 		
-		var disableScreen = window.matchMedia("(min-width: 1200px)");
+		var disableScreen = window.matchMedia("(min-width: 1025px)");
 		if (disableScreen.matches){
 		disableEditor.setCursor(disableEditor.lineCount(), 0);
 		}	
