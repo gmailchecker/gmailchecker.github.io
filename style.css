@@ -111,7 +111,7 @@
 	.header_bottom{justify-content:left!important}
 	.gchecker{flex-direction:column-reverse;padding:10px}
 	.header{height:200px;width:100%;}
-	.mailoutput .CodeMirror,.mailoutput1 .CodeMirror,.mailoutput2 .CodeMirror,.mailoutput3 .CodeMirror{height:150px}
+	.mailoutput .CodeMirror,.mailoutput1 .CodeMirror,.mailoutput2 .CodeMirror,.mailoutput3 .CodeMirror{height:150px;z-index:-999999999}
 	
 }
 
