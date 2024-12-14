@@ -21981,11 +21981,20 @@ async function sleep(ms) {
 async function checkMails(smallParts, totalNeedCheck) {
 	$(".btn-executor").css("pointer-events", "none");
 	$(".btn-executor").css("opacity", "0");
+	$("#paste_clip").css("opacity", "0.3");
 	$(".mailinput").css("pointer-events", "none");
 	$(".download_item").css("pointer-events", "none");
 	$(".download_item").css("opacity", "0.3");
 	$(".copy_clip").css("pointer-events", "none");
 	$(".copy_clip").css("opacity", "0.3");
+	var mailinputScreen = window.matchMedia("(max-width: 1024px)");
+		if (mailinputScreen.matches){
+		$(".mailinput").css("display", "none");
+		}
+	var resultScreen = window.matchMedia("(max-width: 1024px)");
+		if (resultScreen.matches){
+		$(".result").css("margin-top", "210px");
+		}		
     abp.ui.setBusy($(".header"));
     let totalChecked = 0;
     for (let i = 0; i < smallParts.length; i++) {
@@ -22016,7 +22025,7 @@ async function checkMails(smallParts, totalNeedCheck) {
                 allResult.ver.push(email.email);
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);			
-            } else if (email.status === "Error") {
+            } else if (email.status === "Unregistered") {
                 allResult.notExist.push(email.email);
 			}					
         });
@@ -22035,7 +22044,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         goodEditor.setValue(goodValue.join("\n"));
 		
-		var goodScreen = window.matchMedia("(min-width: 1025px)");
+		var goodScreen = window.matchMedia("(min-width: 1px)");
 		if (goodScreen.matches){
 		goodEditor.setCursor(goodEditor.lineCount(), 0);
 		}
@@ -22046,7 +22055,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         verEditor.setValue(verValue.join("\n"));
 		
-		var verScreen = window.matchMedia("(min-width: 1025px)");
+		var verScreen = window.matchMedia("(min-width: 1px)");
 		if (verScreen.matches){
 		verEditor.setCursor(verEditor.lineCount(), 0);
 		}
@@ -22057,7 +22066,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         notExistEditor.setValue(notExistValue.join("\n"));
 		
-		var notExistScreen = window.matchMedia("(min-width: 1025px)");
+		var notExistScreen = window.matchMedia("(min-width: 1px)");
 		if (notExistScreen.matches){
 		notExistEditor.setCursor(notExistEditor.lineCount(), 0);
 		}	
@@ -22068,7 +22077,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 
         disableEditor.setValue(disableValue.join("\n"));
 		
-		var disableScreen = window.matchMedia("(min-width: 1025px)");
+		var disableScreen = window.matchMedia("(min-width: 1px)");
 		if (disableScreen.matches){
 		disableEditor.setCursor(disableEditor.lineCount(), 0);
 		}	
@@ -22077,11 +22086,21 @@ async function checkMails(smallParts, totalNeedCheck) {
     abp.ui.clearBusy();
 	$(".btn-executor").css("pointer-events", "visible");
 	$(".btn-executor").css("opacity", "1");
+	$("#paste_clip").css("opacity", "1");
 	$(".mailinput").css("pointer-events", "visible");
 	$(".download_item").css("pointer-events", "visible");
 	$(".download_item").css("opacity", "1");
 	$(".copy_clip").css("pointer-events", "visible");
 	$(".copy_clip").css("opacity", "1");
+	var mailinputScreen2 = window.matchMedia("(max-width: 1024px)");
+		if (mailinputScreen2.matches){
+		$(".mailinput").css("display", "block");
+		}
+	var resultScreen2 = window.matchMedia("(max-width: 1024px)");
+		if (resultScreen2.matches){
+		$(".result").css("margin-top", "0px");
+		}
+	$(window).scrollTop( $('body').height() );
 }
 function report(mails) {
     if (!mails || mails.length == 0) return;
