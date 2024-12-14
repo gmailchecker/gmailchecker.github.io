@@ -9698,6 +9698,7 @@ $( ".preloader" ).prepend( $( "<image class='pre_img' style='width:50px;height:5
 setTimeout(function() {
 $(".preloader").remove()
 }, 1500);
+
 var contextmenu1 = window.matchMedia("(min-width: 1025px)");
 		if (contextmenu1.matches){
 		document.body.addEventListener("contextmenu", (e) => {e.preventDefault()});
@@ -20591,6 +20592,8 @@ return jQuery;
 
 
 
+
+
 var contextmenu2 = window.matchMedia("(min-width: 1025px)");
 		if (contextmenu2.matches){
 		document.querySelector(".flexi").addEventListener("contextmenu", (e) => {e.preventDefault()});
@@ -20681,7 +20684,7 @@ const stylecss = document.createElement('link');
 	stylecss.setAttribute("rel", "stylesheet");
     document.head.appendChild(stylecss);
 
-$('<style>').text( " *{margin:0;padding:0;box-sizing:border-box;}*,*:before,*:after{box-sizing: inherit;}html{-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;box-sizing:border-box; }html,body{font-family:Verdana,sans-serif;font-size:14px;line-height:1.5;}html::-webkit-scrollbar,.element::-webkit-scrollbar{display: none;}a{text-decoration: none;background:0 0}mark{background:#ff0;color:#000}img{border-style: none;}@media print{*{text-shadow:none!important;color:#000!important;background:0 0!important;box-shadow:none!important}}body{display:flex;padding:0;margin:0;color:#d9d9d9;font-size:12px;background:#000}.spinner{zoom:100%;}.spinner div div{background:#00cc99!important;}@keyframes slideup {from {bottom: -1025px;}to {bottom: 0px;}}.btn-primary{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn_mob{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn{padding:10px;cursor: pointer;color:#4d4d4d;}.download_btn{padding:5px;cursor: pointer;}hr{width:100%;border: 2px #8c8c8c;border-style:inset;margin: 25px 0px 25px 0px;}.flexi{display:flex;position:absolute;top:0;left:0;width:100%;height:100%;justify-content:center; align-items:center;}@media screen and (min-width: 1025px){.tele_group_link{display:flex!important;}.indicator{display:flex!important;}hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}.download-result{position:relative!important;box-shadow:none!important;padding:0px!important;} .solid2{display:block!important;}}@media screen and (max-width: 767px) {.download-result{border-radius:25px 25px 0px 0px;}.gchecker {border-radius:0!important;width:100%!important;} .result {width:100%!important;border-radius:0!important;border:none!important;} .download-result .hidedown{position:absolute;right:0; display:flex;background:#666666;align-items:center;justify-content:center;width:30px;height:30px;border:2px #8c8c8c;border-style:outset;color:#ff0066;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px;}.download-result .showdown{position:absolute;right:0; display:flex;padding-bottom:10px; background:#666666;align-items:center;justify-content:center;width:30px;height:30px;padding-top:5px;border:2px #8c8c8c;border-style:outset;color:#00ffff;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px; }.check_btn_mob{display:block!important;}  } @media screen and (max-width: 1199px) and (min-width: 768px){.gchecker {border-radius:0!important;width:100%!important;}.tele_group_link{display:flex!important;}.indicator{display:flex!important;}.solid2{display:block!important;}.download-result{position:relative!important;box-shadow:none!important; padding:0px!important;} hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}::-webkit-scrollbar {width: 2px!important;}}@media screen and (max-width: 350px) {body {zoom:80%}}" ).appendTo(document.head);
+$('<style>').text( " *{margin:0;padding:0;box-sizing:border-box;}*,*:before,*:after{box-sizing: inherit;}html{-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;box-sizing:border-box; }html,body{font-family:Verdana,sans-serif;font-size:14px;line-height:1.5;}html::-webkit-scrollbar,.element::-webkit-scrollbar{display: none;}a{text-decoration: none;background:0 0}mark{background:#ff0;color:#000}img{border-style: none;}@media print{*{text-shadow:none!important;color:#000!important;background:0 0!important;box-shadow:none!important}}body{display:flex;padding:0;margin:0;color:#d9d9d9;font-size:12px;background:#000}.spinner{zoom:100%;}.spinner div div{background:#ff0066!important;}@keyframes slideup {from {bottom: -1025px;}to {bottom: 0px;}}.btn-primary{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn_mob{padding:10px;cursor: pointer;color:#4d4d4d;}.check_btn{padding:10px;cursor: pointer;color:#4d4d4d;}.download_btn{padding:5px;cursor: pointer;}hr{width:100%;border: 2px #8c8c8c;border-style:inset;margin: 25px 0px 25px 0px;}.flexi{display:flex;position:absolute;top:0;left:0;width:100%;height:100%;justify-content:center; align-items:center;}@media screen and (min-width: 1025px){.tele_group_link{display:flex!important;}.indicator{display:flex!important;}hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}.download-result{position:relative!important;box-shadow:none!important;padding:0px!important;} .solid2{display:block!important;}}@media screen and (max-width: 767px) {.download-result{border-radius:25px 25px 0px 0px;}.gchecker {border-radius:0!important;width:100%!important;} .result {width:100%!important;border-radius:0!important;border:none!important;} .download-result .hidedown{position:absolute;right:0; display:flex;background:#666666;align-items:center;justify-content:center;width:30px;height:30px;border:2px #8c8c8c;border-style:outset;color:#ff0066;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px;}.download-result .showdown{position:absolute;right:0; display:flex;padding-bottom:10px; background:#666666;align-items:center;justify-content:center;width:30px;height:30px;padding-top:5px;border:2px #8c8c8c;border-style:outset;color:#00ffff;font-weight:bold;border-radius:5px;margin:-10px 0px 0px 10px; }.check_btn_mob{display:block!important;}  } @media screen and (max-width: 1199px) and (min-width: 768px){.gchecker {border-radius:0!important;width:100%!important;}.tele_group_link{display:flex!important;}.indicator{display:flex!important;}.solid2{display:block!important;}.download-result{position:relative!important;box-shadow:none!important; padding:0px!important;} hr.solid1{display:none!important;}.showdown, .hidedown{display:none!important;}::-webkit-scrollbar {width: 2px!important;}}@media screen and (max-width: 350px) {body {zoom:80%}}" ).appendTo(document.head);
 
 var contextmenu3 = window.matchMedia("(min-width: 1025px)");
 		if (contextmenu3.matches){
@@ -21623,7 +21626,7 @@ var contextmenu3 = window.matchMedia("(min-width: 1025px)");
 $('<style>').text( "#toast-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;background: #404040;display:flex;flex-direction:column;padding:5px;overflow:hidden;font-size:10px;opacity:0.9;}.CodeMirror {font-family: monospace;height: 300px;color: black;direction: ltr;}.toast {font-family: monospace;}.toast-success {background: none;color:#00cc99;}.toast-error {background: none;color:#fff;}.toast-info {background: none;color:#66d9ff;}.toast-warning {display:none!important}.CodeMirror-lines {padding: 4px 0;}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like {padding: 0 4px;}.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {background-color: white;}.CodeMirror-gutters {border-right: 1px solid #262626;background-color: #f7f7f7;white-space: nowrap;}.CodeMirror-linenumbers {}.CodeMirror-linenumber {padding: 0 3px 0 5px;min-width: 30px;text-align: left;white-space: nowrap;color:#ff6600}.CodeMirror-guttermarker { color: black; }.CodeMirror-guttermarker-subtle { color: #999; }.CodeMirror-cursor {border-left: 2px solid #ff6600;border-right: none;width: 0;}.CodeMirror div.CodeMirror-secondarycursor {border-left: 1px solid silver;}.cm-fat-cursor .CodeMirror-cursor {width: auto;border: 0 !important;background: #7e7;}.cm-fat-cursor div.CodeMirror-cursors {z-index: 1;}.cm-fat-cursor-mark {background-color: rgba(20, 255, 20, 0.5);-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;}.cm-animate-fat-cursor {width: auto;border: 0;-webkit-animation: blink 1.06s steps(1) infinite;-moz-animation: blink 1.06s steps(1) infinite;animation: blink 1.06s steps(1) infinite;background-color: #7e7;}@-moz-keyframes blink {0% {}50% { background-color: transparent; }100% {}}@-webkit-keyframes blink {0% {}50% { background-color: transparent; }100% {}}@keyframes blink {0% {}50% { background-color: transparent; }100% {}}.CodeMirror-overwrite .CodeMirror-cursor {}.cm-tab { display: inline-block; text-decoration: inherit; }.CodeMirror-rulers {position: absolute;left: 0; right: 0; top: -50px; bottom: 0;overflow: hidden;}.CodeMirror-ruler {border-left: 1px solid #ccc;top: 0; bottom: 0;position: absolute;}.cm-s-default .cm-header {color: blue;}.cm-s-default .cm-quote {color: #090;}.cm-negative {color: #d44;}.cm-positive {color: #292;}.cm-header, .cm-strong {font-weight: bold;}.cm-em {font-style: italic;}.cm-link {text-decoration: underline;}.cm-strikethrough {text-decoration: line-through;}.cm-s-default .cm-keyword {color: #708;}.cm-s-default .cm-atom {color: #219;}.cm-s-default .cm-number {color: #164;}.cm-s-default .cm-def {color: #00f;}.cm-s-default .cm-variable,.cm-s-default .cm-punctuation,.cm-s-default .cm-property,.cm-s-default .cm-operator {}.cm-s-default .cm-variable-2 {color: #05a;}.cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}.cm-s-default .cm-comment {color: #a50;}.cm-s-default .cm-string {color: #a11;}.cm-s-default .cm-string-2 {color: #f50;}.cm-s-default .cm-meta {color: #555;}.cm-s-default .cm-qualifier {color: #555;}.cm-s-default .cm-builtin {color: #30a;}.cm-s-default .cm-bracket {color: #997;}.cm-s-default .cm-tag {color: #170;}.cm-s-default .cm-attribute {color: #00c;}.cm-s-default .cm-hr {color: #999;}.cm-s-default .cm-link {color: #00c;}.cm-s-default .cm-error {color: #f00;}.cm-invalidchar {color: #f00;}.CodeMirror-composing { border-bottom: 2px solid; }div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }.CodeMirror-activeline-background {background: #e8f2ff;}.CodeMirror {position: relative;overflow: hidden;background: white;}.CodeMirror-scroll {overflow: scroll !important; /* Things will break if this is overridden */margin-bottom: -30px; margin-right: -30px;padding-bottom: 30px;height: 100%;outline: none; /* Prevent dragging from highlighting the element */position: relative;}.CodeMirror-sizer {position: relative;border-right: 30px solid transparent;}.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {position: absolute;z-index: 6;display: none;}.CodeMirror-vscrollbar {right: 0; top: 0;overflow-x: hidden;overflow-y: scroll;}.CodeMirror-hscrollbar {bottom: 0; left: 0;overflow-y: hidden;overflow-x: scroll;}.CodeMirror-scrollbar-filler {right: 0; bottom: 0;}.CodeMirror-gutter-filler {left: 0; bottom: 0;}.CodeMirror-gutters {position: absolute; left: 0; top: 0;min-height: 100%;z-index: 3;}.CodeMirror-gutter {white-space: normal;height: 100%;display: inline-block;vertical-align: top;margin-bottom: -30px;}.CodeMirror-gutter-wrapper {position: absolute;z-index: 4;background: none !important;border: none !important;}.CodeMirror-gutter-background {position: absolute;top: 0; bottom: 0;z-index: 4;}.CodeMirror-gutter-elt {position: absolute;cursor: default;z-index: 4;}.CodeMirror-gutter-wrapper ::selection { background-color: transparent }.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }.CodeMirror-lines {cursor: text;min-height: 1px;}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like {-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;border-width: 0;background: transparent;font-family: inherit;font-size: inherit;margin: 0;white-space: pre;word-wrap: normal;line-height: inherit;color: inherit;z-index: 2;position: relative;overflow: visible;-webkit-tap-highlight-color: transparent;-webkit-font-variant-ligatures: contextual;font-variant-ligatures: contextual;}.CodeMirror-wrap pre.CodeMirror-line,.CodeMirror-wrap pre.CodeMirror-line-like {word-wrap: break-word;white-space: pre-wrap;word-break: normal;}.CodeMirror-linebackground {position: absolute;left: 0; right: 0; top: 0; bottom: 0;z-index: 0;}.CodeMirror-linewidget {position: relative;z-index: 2;padding: 0.1px; }.CodeMirror-widget {}.CodeMirror-rtl pre { direction: rtl; }.CodeMirror-code {outline: none;}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber {-moz-box-sizing: content-box;box-sizing: content-box;}.CodeMirror-measure {position: absolute;width: 100%;height: 0;overflow: hidden;visibility: hidden;}.CodeMirror-cursor {position: absolute;pointer-events: none;}.CodeMirror-measure pre { position: static; }div.CodeMirror-cursors {visibility: hidden;position: relative;z-index: 3;}div.CodeMirror-dragcursors {visibility: visible;}.CodeMirror-focused div.CodeMirror-cursors {visibility: visible;}.CodeMirror-selected { background: #604020; }.CodeMirror-focused .CodeMirror-selected { background: #604020; }.CodeMirror-crosshair { cursor: crosshair; }.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }.cm-searching {background-color: #ffa;background-color: rgba(255, 255, 0, .4);}.cm-force-border { padding-right: .1px; }@media print {.CodeMirror div.CodeMirror-cursors {visibility: hidden;}}.cm-tab-wrap-hack:after { content: ''; }span.CodeMirror-selectedtext { background: none; }" ).appendTo(document.head);
 
 var contextmenu4 = window.matchMedia("(min-width: 1025px)");
-		if (contextmenu4.matches){
+		if (contextmenu2.matches){
 		document.querySelector(".flexi").addEventListener("contextmenu", (e) => {e.preventDefault()});
 		}
 
@@ -21780,28 +21783,28 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( "#server1" ).after( $( "<a href='https://gmailchecker.github.io'><button id='server2' class='btn-primary' style='color:#ffcc66'>SERVER 2</button></a>" ) );	
 	$( ".mailinput h3" ).after( $( "<button onclick='paste()' id='paste_clip'>📋 PASTE</button>" ) );
 	$( ".mailinput h3" ).after( $( "<textarea style='display:none' id='mail-input' ></textarea>" ) );
-	$( ".result" ).append( $( "<div class='mailoutput'>" ) );
-	$( ".mailoutput" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1''>GOOD  <span id='good_res'></span></p></h3>" ) );
-	$( ".mailoutput h3" ).append( $( "<div class='result_btn' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
+	$( ".result" ).append( $( "<div class='mailoutput' id='mailoutput1'>" ) );
+	$( "#mailoutput1" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1''>GOOD  <span id='good_res'></span></p></h3>" ) );
+	$( "#mailoutput1 h3" ).append( $( "<div class='result_btn' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 	$( ".result_btn" ).append( $( "<button onclick='copy_good()' class='copy_clip' id='copy_clip'>📝 COPY</button>" ) );
 	$( "#copy_clip" ).before( $( "<button onclick='downloadFile(&#39;good&#39;)' class='download_item' id='download_item' >DOWNLOAD</button>" ) );
-	$( ".mailoutput h3" ).after( $( "<textarea style='display:none' id='mail-output'></textarea>" ) );
-	$( ".mailoutput" ).after( $( "<div class='mailoutput1'>" ) );
-	$( ".mailoutput1" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1'>VER  <span id='ver_res'></span></p></h3>" ) );
-	$( ".mailoutput1 h3" ).after( $( "<textarea style='display:none' id='ver-output'></textarea>" ) );
-	$( ".mailoutput1 h3" ).append( $( "<div class='result_btn1' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
+	$( "#mailoutput1 h3" ).after( $( "<textarea style='display:none' id='mail-output'></textarea>" ) );
+	$( "#mailoutput1" ).after( $( "<div class='mailoutput' id='mailoutput2'>" ) );
+	$( "#mailoutput2" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1'>VER  <span id='ver_res'></span></p></h3>" ) );
+	$( "#mailoutput2 h3" ).after( $( "<textarea style='display:none' id='ver-output'></textarea>" ) );
+	$( "#mailoutput2 h3" ).append( $( "<div class='result_btn1' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 	$( ".result_btn1" ).append( $( "<button onclick='copy_ver()' class='copy_clip' id='copy_clip1'>📝 COPY</button>" ) );
 	$( "#copy_clip1" ).before( $( "<button onclick='downloadFile(&#39;ver&#39;)' class='download_item' id='download_item' >DOWNLOAD</button>" ) );
-	$( ".mailoutput1" ).after( $( "<div class='mailoutput2'>" ) );
-	$( ".mailoutput2" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1'>DISABLED  <span id='dis_res'></span></p></h3>" ) );
-	$( ".mailoutput2 h3" ).after( $( "<textarea style='display:none' id='disable-output'></textarea>" ) );
-	$( ".mailoutput2 h3" ).append( $( "<div class='result_btn2' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
+	$( "#mailoutput2" ).after( $( "<div class='mailoutput' id='mailoutput3'>" ) );
+	$( "#mailoutput3" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1'>DISABLED  <span id='dis_res'></span></p></h3>" ) );
+	$( "#mailoutput3 h3" ).after( $( "<textarea style='display:none' id='disable-output'></textarea>" ) );
+	$( "#mailoutput3 h3" ).append( $( "<div class='result_btn2' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 	$( ".result_btn2" ).append( $( "<button onclick='copy_disable()' class='copy_clip' id='copy_clip2'>📝 COPY</button>" ) );
 	$( "#copy_clip2" ).before( $( "<button onclick='downloadFile(&#39;disable&#39;)' class='download_item' id='download_item' >DOWNLOAD</button>" ) );
-	$( ".mailoutput2" ).after( $( "<div class='mailoutput3'>" ) );
-	$( ".mailoutput3" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1'>NOT FOUND  <span id='notfound_res'></span></p></h3>" ) );
-	$( ".mailoutput3 h3" ).after( $( "<textarea style='display:none' id='notExist-output'></textarea>" ) );
-	$( ".mailoutput3 h3" ).append( $( "<div class='result_btn3' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
+	$( "#mailoutput3" ).after( $( "<div class='mailoutput' id='mailoutput4'>" ) );
+	$( "#mailoutput4" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:1'>NOT FOUND  <span id='notfound_res'></span></p></h3>" ) );
+	$( "#mailoutput4 h3" ).after( $( "<textarea style='display:none' id='notExist-output'></textarea>" ) );
+	$( "#mailoutput4 h3" ).append( $( "<div class='result_btn3' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 
 	
 	const btn_executor_time = setTimeout(btn_executor, 6000);
@@ -21987,13 +21990,19 @@ async function checkMails(smallParts, totalNeedCheck) {
 	$(".download_item").css("opacity", "0.3");
 	$(".copy_clip").css("pointer-events", "none");
 	$(".copy_clip").css("opacity", "0.3");
+	$(".progress").css("background", "#000");
 	var mailinputScreen = window.matchMedia("(max-width: 1024px)");
 		if (mailinputScreen.matches){
 		$(".mailinput").css("display", "none");
+		$(".result").css("margin-top", "210px");
 		}
 	var resultScreen = window.matchMedia("(max-width: 1024px)");
 		if (resultScreen.matches){
 		$(".result").css("margin-top", "210px");
+		}
+	var mailoutputScreen = window.matchMedia("(max-width: 1024px)");
+		if (mailoutputScreen.matches){
+		$(".mailoutput .CodeMirror").css("height", "75px");
 		}		
     abp.ui.setBusy($(".header"));
     let totalChecked = 0;
@@ -22025,7 +22034,7 @@ async function checkMails(smallParts, totalNeedCheck) {
                 allResult.ver.push(email.email);
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);			
-            } else if (email.status === "Unregistered") {
+            } else if (email.status === "Error") {
                 allResult.notExist.push(email.email);
 			}					
         });
@@ -22092,6 +22101,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 	$(".download_item").css("opacity", "1");
 	$(".copy_clip").css("pointer-events", "visible");
 	$(".copy_clip").css("opacity", "1");
+	$(".progress").css("background", "none");
 	var mailinputScreen2 = window.matchMedia("(max-width: 1024px)");
 		if (mailinputScreen2.matches){
 		$(".mailinput").css("display", "block");
@@ -22100,7 +22110,12 @@ async function checkMails(smallParts, totalNeedCheck) {
 		if (resultScreen2.matches){
 		$(".result").css("margin-top", "0px");
 		}
+	var mailoutputScreen = window.matchMedia("(max-width: 1024px)");
+		if (mailoutputScreen.matches){
+		$(".mailoutput .CodeMirror").css("height", "200px");
+		}		
 	$(window).scrollTop( $('body').height() );
+			
 }
 function report(mails) {
     if (!mails || mails.length == 0) return;
