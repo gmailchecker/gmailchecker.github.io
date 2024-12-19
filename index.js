@@ -22020,6 +22020,10 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$(".result").css("top", "220px");
 		
 		}
+	var mailinputScreen = window.matchMedia("(max-width: 767px) and (max-height: 400px)");
+		if (mailinputScreen.matches){
+		$(".header_base").css("position", "fixed");
+		}		
 
 		
     abp.ui.setBusy($(".header"));
@@ -22133,6 +22137,10 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$(".result").css("top", "0px");
 		
 		}	
+	var mailinputScreen = window.matchMedia("(max-width: 767px) and (max-height: 400px)");
+		if (mailinputScreen.matches){
+		$(".header_base").css("position", "absolute");
+		}			
 	$(window).scrollTop( $('body').height() );
 			
 }
