@@ -22135,13 +22135,14 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$(".result").css("position", "relative");
 		$(".result").css("padding", "5px 10px 10px 10px");
 		$(".result").css("top", "0px");
+		$(window).scrollTop( $(".mailinput").height() );		
+		}
 		
-		}	
 	var mailinputScreen = window.matchMedia("(max-width: 767px) and (max-height: 400px)");
 		if (mailinputScreen.matches){
 		$(".header_base").css("position", "absolute");
 		}			
-	$(window).scrollTop( $('body').height() );
+
 			
 }
 function report(mails) {
