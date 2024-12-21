@@ -1891,7 +1891,7 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( ".header" ).append( $( "<p class='server_info'>SERVER : 2</>" ) );
 	$( ".header" ).append( $( "<image class='lightning' src='xmas5.gif'></image>" ) );
 	$( ".header" ).append( $( "<image class='checking_mail' src='run.gif' style='display:none'></image>" ) );
-	$( ".header" ).append( $( "<div id='mbahmatur' style='position:absolute;top:0;left:0;z-index:18;display:none;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;color:#fff;overflow:hidden'><image src='star.gif' style='width:100%;'></image></div>" ) );
+	$( ".header" ).append( $( "<div id='mbahmatur' style='position:absolute;top:0;left:0;z-index:19;display:none;width:100%;color:#fff;overflow:hidden;font-size:11px;background:#000;padding:2px'>📣 If the service is not working properly, please use another server.</div>" ) );
 	$( ".header" ).append( $( "<div id='starting1' style='position:absolute;top:0;left:0;z-index:99;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#000;color:#fff'></div>" ) );
 	$( ".header" ).append( $( "<div id='starting2' style='position:absolute;top:0;left:0;z-index:98;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;background:#404040;color:#fff;'></div>" ) );
 	$( ".header" ).append( $( "<div class='header_top' id='header_top' style='position:relative;width:100%;height:50%;display:flex;justify-content:center;align-items:center;'>" ) );
@@ -1899,7 +1899,7 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( ".header_top" ).before( $( "<marquee id='maranoun' style='display:none;position:absolute;top:0;left:0;width:100%;height:10px;background:#000;color:yellow;font-size:8px;line-height:8px'> 📢 DOWNLOAD(LIVE) button has been fixed </marquee>" ) );	
 	$( ".header_top" ).append( $( "<div class='g_checker_logo'> <image class='g_checker_logo_img' src='gmail-checker.png'></image></div>" ) );
 	$( ".g_checker_logo" ).after( $( "<h1 class='title'>BULK GMAIL CHECKER</h1>" ) );
-	$( ".header_bottom" ).append( $( "<div class='indicat' style='display:flex;padding:5px'><div class='downres_item'><p style='color:#00cc66'>GOOD</p><div>:</div><span class='rp-down' id='rp-good' style='color:#fff'></span></div><div class='downres_item'><p style='color:#ffcc00'>VER</p><div>: </div><span class='rp-down' id='rp-ver' style='color:#fff' ></span></div><div class='downres_item'><p style='color:#ff8080'>DISABLED</p><div>: </div><span class='rp-down' id='rp-disabled' style='color:#fff'></span></div><div class='downres_item'><p style='color:#4db8ff'>NOT FOUND</p><div>: </div><span class='rp-down' id='rp-notfound' style='color:#fff' ></span></div></div>" ) );
+	$( ".header_bottom" ).append( $( "<div class='indicat' style='display:flex;align-items:center;padding:5px'><div class='downres_item' id='turbo_indi' style='display:none;background:red;height:20px;padding:5px;border-radius:3px;'>TURBO</div><div class='downres_item' id='downres_good'><p style='color:#00cc66'>GOOD</p><div>:</div><span class='rp-down' id='rp-good' style='color:#fff'></span></div><div class='downres_item ' id='downres_ver'><p style='color:#ffcc00'>VER</p><div>: </div><span class='rp-down' id='rp-ver' style='color:#fff' ></span></div><div class='downres_item' id='downres_disabled'><p class='downres_disabled' style='color:#ff8080'>DISABLED</p><p class='downres_trash' style='display:none;color:#ff8080'>BAD</p><div>: </div><span class='rp-down' id='rp-disabled' style='color:#fff'></span></div><div class='downres_item' id='downres_notfound'><p style='color:#4db8ff'>NOT FOUND</p><div>: </div><span class='rp-down' id='rp-notfound' style='color:#fff' ></span></div></div>" ) );
 	$( ".indicat" ).after( $( "<div class='indi_progress'>" ) );$( ".indi_progress" ).append( $( "<div class='progress progress-lg'>" ) );
 	$( ".progress" ).prepend( $( "<div id='mail-progress-bar' class='progress-bar progress-bar-striped' role='progressbar' style='width: 0%;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'>0%</div>" ) );
 
@@ -1909,7 +1909,7 @@ const mbahmatur1a = document.getElementById("mbahmatur");
 setInterval(function() {mbahmatur1a.style.display="none";}, 10000);
 
 const mbahmatur1b = document.getElementById("mbahmatur");
-setInterval(function() {mbahmatur1b.style.display="flex";}, 30000);
+setInterval(function() {mbahmatur1b.style.display="flex";}, 15000);
 
 const myTimeout1 = setTimeout(starting1, 2500);
 
@@ -21772,6 +21772,7 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( ".mailinput" ).prepend( $( "<div class='btn-executor' id='btn-executor' style='display:none'></div>" ) );
 	$( ".btn-executor" ).append( $( "<button onClick='clear_all()' id='clear-editor' class='btn-primary'>CLEAR</button>" ) );;
 	$( "#clear-editor" ).after( $( "<button onClick='clear_all_run()' id='check-btn' class='check_btn'>START</button>" ) );
+	$( "#clear-editor" ).before( $( "<button id='turbo-btn' class='turbo_btn'>TURBO<p class='turbo_nonactive' style='color:red;margin-left:3px;'>●</p><p class='turbo_active' style='display:none;color:green;margin-left:3px;'>●</p></button>" ) );
 	$( ".mailinput h3" ).append( $( "<div class='input_btn' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );	
 	$( ".input_btn" ).append( $( "<a href='https://mbahbabat.github.io' ><button id='server1' class='btn-primary' style='color:#ffcc66'>SERVER 1</button></a>" ) );
 	$( "#server1" ).after( $( "<a href='https://gmailchecker.github.io'><button id='server2' class='btn-primary' style='color:#ffcc66'>SERVER 2</button></a>" ) );	
@@ -21790,7 +21791,7 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( ".result_btn1" ).append( $( "<button onclick='copy_ver()' class='copy_clip' id='copy_clip1'><div class='showel'>Copy!</div><image src='copy.png' style='width:16px'></image></button>" ) );
 	$( "#copy_clip1" ).before( $( "<button onclick='downloadFile(&#39;ver&#39;)' class='download_item' id='download_item' ><p class='showel'>Download!</p><image src='download.png' style='width:16px'></image></button>" ) );
 	$( "#mailoutput2" ).after( $( "<div class='mailoutput' id='mailoutput3'>" ) );
-	$( "#mailoutput3" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:10'>DISABLED  <span class='res_bad'>(</span><span class='res_bad' id='dis_res'></span><span class='res_bad'>)</span></p></h3>" ) );
+	$( "#mailoutput3" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:10'><p class='h3_disabled'>DISABLED  </p> <p class='h3_trash' style='display:none'>BAD  </p>   <span class='res_bad'>(</span><span class='res_bad' id='dis_res'></span><span class='res_bad'>)</span></p></h3>" ) );
 	$( "#mailoutput3" ).append( $( "<div style='height:100%;width:100%;display:flex;position:relative;'><image class='snow_image' src='dark.jpg' style='width:100%;height:100%;position:absolute;pointer-events:none;opacity:1'></image><textarea style='display:none' id='disable-output'></textarea></div>" ) );
 	$( "#mailoutput3 h3" ).append( $( "<div class='result_btn2' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 	$( ".result_btn2" ).append( $( "<button onclick='copy_disable()' class='copy_clip' id='copy_clip2'><div class='showel'>Copy!</div><image src='copy.png' style='width:16px'></image></button>" ) );
@@ -21820,6 +21821,21 @@ let allResult = {
     disable: [],
 };
 var mails2 = [];
+var model = 2;
+var nums = 200;
+var key = generateRandomHex()
+function generateRandomHex() {
+
+    const randomBytes = crypto.getRandomValues(new Uint8Array(16));
+
+
+    let hexString = '';
+    randomBytes.forEach(byte => {
+        hexString += byte.toString(16).padStart(2, '0');
+    });
+
+    return hexString;
+}
 function getCookie(name)
 	{
 	    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
@@ -21890,6 +21906,52 @@ $("#rp-disabled").text(" - ")
 			};
 			mails2 = [];			
         });
+	$(document).on("click",
+        "#turbo-btn",
+        function() {
+			$("#mailoutput2").toggle();
+			$("#mailoutput4").toggle();
+			$(".h3_disabled").toggle();
+			$(".h3_trash").toggle();
+			$("#mailoutput3 .download_item").toggle();
+			$("#downres_ver").toggle();
+			$("#downres_notfound").toggle();
+			$(".downres_disabled").toggle();
+			$(".downres_trash").toggle();
+			$(".turbo_active").toggle();
+			$(".turbo_nonactive").toggle();
+			$("#turbo_indi").toggle();
+			nums = 100;
+			document.querySelector(".gchecker").classList.toggle("gchecker1");
+			document.querySelector(".result").classList.toggle("result1");
+			document.querySelector(".res_bad").classList.toggle("res_bad1");
+			document.querySelector("#mail-progress-bar").style.cssText="width:0!important;transition:2s";
+			$("#rp-good").text(" - ");
+			$("#rp-ver").text(" - ");
+			$("#rp-disabled").text(" - ");
+			$("#rp-notfound").text(" - ");
+			$("#good_res").text("");
+			$("#ver_res").text("");
+			$("#dis_res").text("");
+			$("#notfound_res").text("");
+			$(".res_bad").css("opacity", "0");			
+			goodEditor.setValue("");
+			verEditor.setValue("");
+			notExistEditor.setValue("");
+			disableEditor.setValue("");
+			allResult = {
+				ver: [],
+				good: [],
+				notExist: [],
+				disable: [],
+			};
+			mails2 = [];
+			if (model === "3") {
+			  model = "2";
+			} else {
+			  model = "3";
+}			
+        });		
 	$(document).on("click",
         "#paste_clip",
         async function paste() {
@@ -21964,7 +22026,7 @@ $("#rp-disabled").text(" - ")
 
 			$.ajaxSettings.async = true;
 
-            let smallParts = chunk(mails1, 200);
+            let smallParts = chunk(mails1, nums);
             checkMails(smallParts, mails1.length);
         });
 })();
@@ -22010,7 +22072,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 		goodEditor.setValue("Checking...");	
 		verEditor.setValue("Checking...");	
 		notExistEditor.setValue("Checking...");	
-		disableEditor.setValue("Checking...");					
+		disableEditor.setValue("Checking...");			
 	
 	var mailinputScreen = window.matchMedia("(max-width: 767px)");
 		if (mailinputScreen.matches){
@@ -22023,8 +22085,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 	var mailinputScreen = window.matchMedia("(max-width: 767px) and (max-height: 430px)");
 		if (mailinputScreen.matches){
 		$(".header_base").css("position", "fixed");
-		}	
-
+		}
 		
     abp.ui.setBusy($(".header"));
     let totalChecked = 0;
@@ -22057,9 +22118,11 @@ async function checkMails(smallParts, totalNeedCheck) {
                 allResult.ver.push(email.email);
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);			
+            } else if (email.status === "Unregistered") {
+                allResult.notExist.push(email.email);			
             } else if (email.status === "Error") {
                 allResult.notExist.push(email.email);
-			}					
+			}
         });
 
 
@@ -22068,7 +22131,6 @@ async function checkMails(smallParts, totalNeedCheck) {
         $("#mail-progress-bar")[0].textContent = `${percent}%`;
 
         abp.notify.success("✅ " + totalChecked + " Checked ");
-
 
         let goodValue = [
             ...allResult.good,
@@ -22135,14 +22197,14 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$(".result").css("position", "relative");
 		$(".result").css("padding", "5px 10px 10px 10px");
 		$(".result").css("top", "0px");
-		$(window).scrollTop( $(".mailinput").height() );		
+		$(window).scrollTop( $(".mailinput").height() );
 		}
 		
 	var mailinputScreen = window.matchMedia("(max-width: 767px) and (max-height: 430px)");
 		if (mailinputScreen.matches){
 		$(".header_base").css("position", "relative");
-		}			
-
+		}		
+	
 			
 }
 function report(mails) {
@@ -22150,15 +22212,18 @@ function report(mails) {
     let good = mails.filter(email => email.status === "live").length;
     let ver = mails.filter(email => email.status === "Verify").length;
     let dis = mails.filter(email => email.status === "Disabled").length;
-    let notExist = mails.filter(email => email.status === "Error").length;
+    let notExist = mails.filter(email => email.status === "Unregistered").length;
+	let notFound = mails.filter(email => email.status === "Error").length;
     increaseReport("#rp-good", good);
     increaseReport("#rp-ver", ver);
     increaseReport("#rp-disabled", dis);
     increaseReport("#rp-notfound", notExist);
+	increaseReport("#rp-notfound", notFound);
 	increaseReport("#good_res", good);
 	increaseReport("#ver_res", ver);
     increaseReport("#dis_res", dis);
     increaseReport("#notfound_res", notExist);
+	increaseReport("#notfound_res", notFound);
 }
 
 function increaseReport(id, number) {
@@ -22175,42 +22240,54 @@ function increaseReport(id, number) {
 }
 
 async function requestCheckMails(mails) {
-    return new Promise(async (r) => {
-        let attempt = 0;
-        const maxAttempts = 5; 
-        
-        let data = {
-            mail: mails,
-            key:'2'
-        };
-        
-        const self = this;
-        
-        while (attempt < maxAttempts) {
-            try {
-                attempt++;
-                
-                const res = await axios.post('https://gmailver.com/php/check2.php', data);
-                const responseData = res.data;
-                if (!responseData.status) {
-                    abp.notify.info("Server is Busy");
-                    return r(false);
-                }
-                const result = res.data.data;
-                const transactionId = result.transactionId;
+	return new Promise(async (r) => {
+		let attempt = 0;
+		const maxAttempts = 5; 
 
-                return r(result);
-            } catch (error) {
+		let fastCheck = ''
+		if (model == 1) {
+			fastCheck = false;
+		} else if (model == 3) {
+			fastCheck = true;
+		}
+		let data = {
+			mail: mails,
+			key: key,
+			fastCheck: fastCheck
+		};
 
-                console.warn('Request failed, retrying...', error);
-                
-                if (attempt >= maxAttempts) {
+		const self = this;
 
-                    return r(false);
-                }
-            }
-        }
-    });
+		while (attempt < maxAttempts) {
+			try {
+				attempt++;
+				var res;
+				if (model == 1 || model == 3) {
+					res = await axios.post('https://gmailver.com/php/check1.php', data);
+				} else {
+					res = await axios.post('https://gmailver.com/php/check2.php', data);
+				}
+
+				const responseData = res.data;
+				if (!responseData.status) {
+					abp.notify.warn("Äang thá»­ láº¡i...");
+					return r(false);
+				}
+				const result = res.data.data;
+				const transactionId = result.transactionId;
+
+				return r(result);
+			} catch (error) {
+
+				console.error('Request failed, retrying...', error);
+
+				if (attempt >= maxAttempts) {
+
+					return r(false);
+				}
+			}
+		}
+	});
 }
 
 
@@ -22271,5 +22348,7 @@ function getCookie(cookieName) {
 			}
 
 function hidedown(){document.querySelector(".tele_group_link").style.display="flex";document.querySelector(".solid1").style.display="flex";document.querySelector(".tele_group_link").style.display="flex";document.querySelector(".appversion").style.display="block";document.querySelector(".indicator").style.display="flex";document.querySelector(".download-result").style.position="relative";document.querySelector(".download-result").style.padding="0px";document.querySelector(".download-result").style["boxShadow"] = "none";document.querySelector(".download-result").style.animation="none";document.querySelector(".solid2").style.display="block";document.querySelector(".hidedown").style.display="none";document.querySelector(".showdown").style.display="flex";}
+
+
 
 
