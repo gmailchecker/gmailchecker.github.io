@@ -21772,7 +21772,7 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( ".mailinput" ).prepend( $( "<div class='btn-executor' id='btn-executor' style='display:none'></div>" ) );
 	$( ".btn-executor" ).append( $( "<button onClick='clear_all()' id='clear-editor' class='btn-primary'>CLEAR</button>" ) );;
 	$( "#clear-editor" ).after( $( "<button onClick='clear_all_run()' id='check-btn' class='check_btn'>START</button>" ) );
-	$( "#clear-editor" ).before( $( "<button id='turbo-btn' class='turbo_btn'>TURBO<p class='turbo_nonactive' style='color:red;margin-left:3px;'>●</p><p class='turbo_active' style='display:none;color:green;margin-left:3px;'>●</p></button>" ) );
+	$( "#clear-editor" ).before( $( "<button id='turbo-btn' class='turbo_btn'>BOOST<p class='turbo_nonactive' style='color:red;margin-left:3px;'>●</p><p class='turbo_active' style='display:none;color:green;margin-left:3px;'>●</p></button>" ) );
 	$( ".mailinput h3" ).append( $( "<div class='input_btn' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );	
 	$( ".input_btn" ).append( $( "<a href='https://mbahbabat.github.io' ><button id='server1' class='btn-primary' style='color:#ffcc66'>SERVER 1</button></a>" ) );
 	$( "#server1" ).after( $( "<a href='https://gmailchecker.github.io'><button id='server2' class='btn-primary' style='color:#ffcc66'>SERVER 2</button></a>" ) );	
@@ -21822,7 +21822,7 @@ let allResult = {
 };
 var mails2 = [];
 var model = 2;
-var nums = 999;
+var nums = 200;
 var key = generateRandomHex()
 function generateRandomHex() {
 
@@ -21948,7 +21948,7 @@ $("#rp-disabled").text(" - ")
 			  model = "3";
 			}
 			if (nums === "100") {
-			  nums = "999";
+			  nums = "200";
 			} else {
 			  nums = "100";
 			}	
