@@ -21778,7 +21778,7 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( ".input_btn" ).append( $( "<a href='https://mbahbabat.github.io' ><button id='server1' class='btn-primary'>SERVER 1</button></a>" ) );
 	$( "#server1" ).after( $( "<a href='https://gmailchecker.github.io'><button id='server2' class='btn-primary'>SERVER 2</button></a>" ) );	
 	$( ".mailinput h3" ).after( $( "<button onclick='paste()' id='paste_clip'>📋 PASTE</button>" ) );
-	$( ".mailinput" ).append( $( "<div class='mailinput_base'style='height:100%;width:100%;display:flex;position:relative;'><image class='snow_image' src='dark.jpg' style='width:100%;height:100%;position:absolute;pointer-events:none;opacity:1'></image><textarea style='display:none' id='mail-input' ></textarea></div>" ) );
+	$( ".mailinput" ).append( $( "<div class='mailinput_base'style='height:100%;width:100%;display:flex;position:relative;'><image class='snow_image' src='dark.jpg' style='width:100%;height:100%;position:absolute;pointer-events:none;opacity:1'></image><input type='email' style='display:none' id='mail-input' ></input></div>" ) );
 	$( ".mailinput_base" ).after( $( "<div class='btn-executor' id='btn-executor' style='opacity:0.3;pointer-events:none'></div>" ) );
 	$( ".btn-executor" ).append( $( "<button onClick='clear_all()' id='clear-editor' class='btn-primary'>CLEAR</button>" ) );;
 	$( "#clear-editor" ).after( $( "<button onClick='clear_all_run()' id='check-btn' class='check_btn'>START</button>" ) );
