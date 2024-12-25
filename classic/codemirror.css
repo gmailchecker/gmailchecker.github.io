@@ -26,7 +26,8 @@
 
 .CodeMirror-gutters {
   border-right: 1px solid #ddd;
-  background-color: #f7f7f7;
+  border-left: 2px solid #604020;
+  background-color: #d9b38c;
   white-space: nowrap;
 }
 .CodeMirror-linenumbers {}
@@ -34,7 +35,7 @@
   padding: 0 3px 0 5px;
   min-width: 20px;
   text-align: left;
-  color: #999;
+  color: #392613;
   white-space: nowrap;
 }
 
@@ -44,7 +45,7 @@
 /* CURSOR */
 
 .CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 1px solid #ffff00;
   border-right: none;
   width: 0;
 }
