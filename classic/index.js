@@ -97,6 +97,11 @@ inputEditor.setValue("example@gmail.com");
 			mails2 = [];
         });
 	$(document).on("click",
+        "#clear_btn",
+        function() {
+		 inputEditor.setValue("");	
+			});	
+	$(document).on("click",
         "#check_btn",
         function() {
 			document.querySelector("#mail-progress-bar").style.cssText="width:0!important;transition:2s";
