@@ -1,6 +1,6 @@
-	$( ".header" ).append( $( "<p class='server_info'>SERVER : 1</>" ) );
-	var model = 1;
-	var nums = 50;	
+	$( ".header" ).append( $( "<p class='server_info'>SERVER : 2</>" ) );
+	var model = 2;
+	var nums = 200;	
 	$(document).on("click",
         "#turbo-btn",
         function() {
@@ -44,12 +44,12 @@
 			};
 			mails2 = [];
 			if (model === "3") {
-			  model = "1";
+			  model = "2";
 			} else {
 			  model = "3";
 			}
 			if (nums === "100") {
-			  nums = "50";
+			  nums = "200";
 			} else {
 			  nums = "100";
 			}	
