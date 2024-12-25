@@ -11,8 +11,8 @@ let allResult = {
     notExist: [],
     disable: [],
 };
-	var model = 2;
-	var nums = 200;	
+	var model = 1;
+	var nums = 50;	
 var mails2 = [];
 var key = generateRandomHex()
 function generateRandomHex() {
@@ -60,12 +60,19 @@ inputEditor.setValue("example@gmail.com");
     $(document).on("click",
         "#recheck_btn",
         function() {
-			abp.notify.warn(" Clear!");
+			document.querySelector("#check_btn").style.cssText="pointer-events:visible;opacity:1";
+			$(".mode").toggle();
+			document.querySelector(".mode").style.cssText="display:flex";
 			document.querySelector(".mail_input").style.cssText="width:100;height:100";
 			document.querySelector(".good_output").style.cssText="width:0;height:0";
 			document.querySelector(".ver_output").style.cssText="width:0;height:0";
 			document.querySelector(".dis_output").style.cssText="width:0;height:0";
 			document.querySelector(".notfound_output").style.cssText="width:0;height:0";
+			document.querySelector(".res_tab_menu").style.cssText="border-color:#604020";
+			document.querySelector("#good_res").style.cssText="background:#996633;color:#fff";
+			document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc";
+			document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc";
+			document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc";
 			$("#good_badge").text("");
 			$("#ver_badge").text("");
 			$("#dis_badge").text("");
@@ -108,42 +115,32 @@ inputEditor.setValue("example@gmail.com");
 	$(document).on("click",
         "#paste_clip",
         async function paste() {
-			abp.notify.warn(" Paste from clipboard!");
-			document.querySelector('#toon_audio').play();
 			const text = await navigator.clipboard.readText();
 			inputEditor.setValue(text);
 			inputEditor.focus();
 			inputEditor.setCursor(inputEditor.lineCount(), 0);			
         });
 	$(document).on("click",
-        "#copy_clip",
+        "#copy_clip1",
         async function copy_good() {
-			abp.notify.warn("Copied!");
-			document.querySelector('#toon_audio').play();
 			const goodtocopy = goodEditor.getValue()
 			navigator.clipboard.writeText(goodtocopy);
         });
 	$(document).on("click",
-        "#copy_clip1",
+        "#copy_clip2",
         async function copy_ver() {
-			abp.notify.warn("Copied!");
-			document.querySelector('#toon_audio').play();
 			const vertocopy = verEditor.getValue()
 			navigator.clipboard.writeText(vertocopy);
         });
 	$(document).on("click",
-        "#copy_clip2",
+        "#copy_clip3",
         async function copy_disable() {
-			abp.notify.warn("Copied!");
-			document.querySelector('#toon_audio').play();
 			const disabletocopy = disableEditor.getValue()
 			navigator.clipboard.writeText(disabletocopy);
         });
 	$(document).on("click",
-        "#copy_clip3",
+        "#copy_clip4",
         async function copy_notExist() {
-			abp.notify.warn("Copied!");
-			document.querySelector('#toon_audio').play();
 			const notExisttocopy = notExistEditor.getValue()
 			navigator.clipboard.writeText(notExisttocopy);
         });
@@ -205,11 +202,17 @@ async function checkMails(smallParts, totalNeedCheck) {
 		disableEditor.setValue("Checking...");
 		document.querySelector(".mail_input").style.cssText="width:0%;height:0%";		
 		document.querySelector(".good_output").style.cssText="width:100%;height:100%";
-		document.querySelector("#good_res").style.cssText="background:#604020;color:#fff";
+		document.querySelector("#good_res").style.cssText="background:#996633;color:#fff";
 		$(".res_tab_menu h3").hide();
 		$(".res_btn").show();
-		$("#check_btn").hide();
-		$("#recheck_btn").show();
+		document.querySelector("#check_btn").style.cssText="pointer-events:none;opacity:0.3";
+		document.querySelector(".res_tab_menu").style.cssText="border-color:#996633;background:#604020";
+		$(".mode").toggle();
+		$("#good_badge").text(" 0 ");
+		$("#ver_badge").text(" 0 ");
+		$("#dis_badge").text(" 0 ");
+		$("#notfound_badge").text(" 0 ");
+		
 	
 		
     abp.ui.setBusy($("body"));
@@ -302,6 +305,8 @@ async function checkMails(smallParts, totalNeedCheck) {
 		}	
 		
     }
+	$("#check_btn").hide();
+	$("#recheck_btn").show();
     abp.ui.clearBusy();
 	
 	
