@@ -28,6 +28,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRG7FH5Z0"></script>
 	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-NZRG7FH5Z0');</script>
+		
 	<style>
 	*{margin:0;padding:0;box-sizing:border-box;}
 	*,*:before,*:after{box-sizing: inherit;}
@@ -48,11 +49,17 @@
 	.CodeMirror-hscrollbar{display:none!important}
 	#check_btn,#recheck_btn{background:#c68c53;border:3px #fff; border-style:outset;border-radius:10px;color:#fff}
 	.mode{height:100px;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:5px;font-size:12px}
-	.advanced_mode{width:150px;text-align:center;cursor:pointer;padding:5px 0px 5px 0px;color:#392613;opacity:0.7}
-	.speed_mode{width:150px;text-align:center;cursor:pointer;padding:5px 0px 5px 0px;color:#392613;border:2px #392613;border-style:hidden hidden ridge hidden}
+	.advanced_mode{position:relative;width:200px;text-align:center;cursor:pointer;padding:5px 0px 5px 0px;color:#392613;opacity:0.7;font-weight:300;}
+	.speed_mode{position:relative;width:200px;text-align:center;cursor:pointer;padding:5px 0px 5px 0px;color:#392613;border:2px #392613;border-style:hidden hidden ridge hidden;font-weight:bold;}
+	.mode_on{position:absolute;right:0;top:5px;color:#86592d;font-weight:900;font-size:10px;background:#d2a679;padding:2px;border-radius:5px}
+
 	
 	.mail_input, .good_output, .ver_output, .dis_output, .notfound_output{position:relative;width:100%;height:100%}
 	.mail_input .CodeMirror, .good_output .CodeMirror, .ver_output .CodeMirror, .dis_output .CodeMirror, .notfound_output .CodeMirror {position:absolute;width:100%;height:100%;background:#392613;color:#d9b38c}
+	.good_output .CodeMirror{color:#00cc99;}
+	.ver_output .CodeMirror{color:#ffcc00;}
+	.dis_output .CodeMirror{color:#ff6666;}
+	.notfound_output .CodeMirror{color:#00ccff}
 	.act_button{display:flex;flex-direction:column;position:absolute;bottom:20px;right:20px;gap:5px}
 	.paste_clip{width:75px;height:30px;background:#c68c53;position:absolute;top:20px;right:20px;cursor:pointer;border-radius:10px}
 	.clear_btn{width:75px;height:30px;background:#c68c53;position:absolute;top:60px;right:20px;cursor:pointer;border-radius:10px}
@@ -61,7 +68,7 @@
 	
 	.res_tab_menu{display:flex;align-items:center;width:100%;height:75px;background:#996633;color:#fff;border-bottom:5px solid #996633;border-radius:10px 10px 0px 0px;}
 	.res_tab_menu h3{margin-left:10px;width:100%}
-	.res_btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;gap:5px;cursor:pointer;border-left:2px solid #996633;border-bottom:2px solid #000;font-weight:bold;}
+	.res_btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;gap:5px;cursor:pointer;border-left:2px solid #392613;border-bottom:1px solid #392613;font-weight:bold;}
 	#good_res,#good_res_speed{border-radius:10px 0px 0px 0px;}
 	#notfound_res,#bad_res_speed{border-radius:0px 10px 0px 0px;}
 	.badge{display:flex;align-items:center;justify-content:center;background:#734d26;height:20px;border-radius:5px;min-width:50px;text-align:center;font-weight:bold}
@@ -71,7 +78,7 @@
 	#notfound_badge{color:#00ccff;font-weight:bold}
 	.adv_res,.speed_res{display:flex;align-items:center;width:100%;height:100%;}
 	
-	
+
 	.progress{font-size:10px;overflow: hidden;width:100%;background:#996633;display:flex;align-items:center}	
 	.progress-bar{transition: width .6s ease; text-align: center;white-space: nowrap; color: #fff;background-color: #bf8040;padding:5px 0px 5px 0px;margin-left:2px}
 	.progress-bar-striped{background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);background-size: .5rem .5rem;} 
@@ -114,7 +121,7 @@
 	}
 	
 	.spinner{zoom:100%;}
-	.spinner div div{background:#ff0066!important;}
+	.spinner div div{background:#cc9966!important;}
 	
 	.toast{}
 
@@ -2085,9 +2092,9 @@
 
 	$( ".progress" ).after( $( "<div class='mode'>" ) );
 
-	$( ".mode" ).append( $( "<div class='advanced_mode' id='advanced_mode'>Advanced Mode</div>" ) );
+	$( ".mode" ).append( $( "<div class='advanced_mode' id='advanced_mode'>Advanced Mode<p class='mode_on'>Active</p></div>" ) );
 
-	$( "#advanced_mode" ).after( $( "<div class='speed_mode' id='speed_mode'>Speed Mode</div>" ) );
+	$( "#advanced_mode" ).after( $( "<div class='speed_mode' id='speed_mode'>Speed Mode<p class='mode_on'>Active</p></div>" ) );
 
 	$( ".mode" ).after( $( "<div class='executor'>" ) );
 
@@ -21762,6 +21769,7 @@ $('<style>').text( "#toast-container{position:absolute;pointer-events:none;top:0
 $(".res_btn").hide();
 $("#recheck_btn").hide();
 $(".adv_res").hide();
+$(".advanced_mode .mode_on").hide();
 
 
 
@@ -21770,37 +21778,39 @@ document.querySelector(".ver_output").style.cssText="width:0;height:0";
 document.querySelector(".dis_output").style.cssText="width:0;height:0";
 document.querySelector(".notfound_output").style.cssText="width:0;height:0";
 
-
-
 $(document).on("click",
 "#advanced_mode",
 function() {
-		document.querySelector(".advanced_mode").style.cssText="border:2px #392613;border-style:hidden hidden ridge hidden;opacity:1";
-		document.querySelector(".speed_mode").style.cssText="border:none;opacity:0.7";
-		model = 1
-		nums = 50;
+		document.querySelector(".advanced_mode").style.cssText="font-weight:bold;border:2px #392613;border-style:hidden hidden ridge hidden;opacity:1";
+		document.querySelector(".speed_mode").style.cssText="font-weight:300;border:none;opacity:0.7";
+		model = 2
+		nums = 200;
 		$(".adv_res").toggle();
 		$(".speed_res").toggle();
+		$(".advanced_mode .mode_on").toggle();
+		$(".speed_mode .mode_on").toggle();
         });
 		
 $(document).on("click",
 "#speed_mode",
 function() {
-		document.querySelector(".advanced_mode").style.cssText="border:none;opacity:0.7";
-		document.querySelector(".speed_mode").style.cssText="border:2px #392613;border-style:hidden hidden ridge hidden;opacity:1";
+		document.querySelector(".advanced_mode").style.cssText="font-weight:300;border:none;opacity:0.7";
+		document.querySelector(".speed_mode").style.cssText="font-weight:bold;border:2px #392613;border-style:hidden hidden ridge hidden;opacity:1";
 		model = 3;
 		nums = 100;
 		$(".adv_res").toggle();
 		$(".speed_res").toggle();
+		$(".advanced_mode .mode_on").toggle();
+		$(".speed_mode .mode_on").toggle();
         });		
 
 $(document).on("click",
 "#good_res",
 function() {
-		document.querySelector("#good_res").style.cssText="background:#996633;color:#fff";
-		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc";
+		document.querySelector("#good_res").style.cssText="background:#996633;color:#fff;opacity:1";
+		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
 		document.querySelector(".good_output").style.cssText="width:100%;height:100%";	
 		document.querySelector(".ver_output").style.cssText="width:0;height:0";
 		document.querySelector(".dis_output").style.cssText="width:0;height:0";
@@ -21810,10 +21820,10 @@ function() {
 $(document).on("click",
 "#ver_res",
 function() {
-		document.querySelector("#good_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#ver_res").style.cssText="background:#996633;color:#fff";
-		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc";
+		document.querySelector("#good_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#ver_res").style.cssText="background:#996633;color:#fff;opacity:1";
+		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
 		document.querySelector(".good_output").style.cssText="width:0;height:0";		
 		document.querySelector(".ver_output").style.cssText="width:100%;height:100%";
 		document.querySelector(".dis_output").style.cssText="width:0;height:0";
@@ -21823,10 +21833,10 @@ function() {
 $(document).on("click",
 "#dis_res",
 function() {
-		document.querySelector("#good_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#dis_res").style.cssText="background:#996633;color:#fff";
-		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc";
+		document.querySelector("#good_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#dis_res").style.cssText="background:#996633;color:#fff;opacity:1";
+		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
 		document.querySelector(".good_output").style.cssText="width:0;height:0";		
 		document.querySelector(".ver_output").style.cssText="width:0;height:0";
 		document.querySelector(".dis_output").style.cssText="width:100%;height:100%";
@@ -21836,10 +21846,10 @@ function() {
 $(document).on("click",
 "#notfound_res",
 function() {
-		document.querySelector("#good_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#notfound_res").style.cssText="background:#996633;color:#fff";
+		document.querySelector("#good_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#notfound_res").style.cssText="background:#996633;color:#fff;opacity:1";
 		document.querySelector(".good_output").style.cssText="width:0;height:0";		
 		document.querySelector(".ver_output").style.cssText="width:0;height:0";
 		document.querySelector(".dis_output").style.cssText="width:0;height:0";
@@ -21849,8 +21859,8 @@ function() {
 $(document).on("click",
 "#good_res_speed",
 function() {
-		document.querySelector("#good_res_speed").style.cssText="background:#996633;color:#fff";
-		document.querySelector("#bad_res_speed").style.cssText="background:none;color:#cccccc";
+		document.querySelector("#good_res_speed").style.cssText="background:#996633;color:#fff;opacity:1";
+		document.querySelector("#bad_res_speed").style.cssText="background:none;color:#cccccc;opacity:0.5";
 		document.querySelector(".good_output").style.cssText="width:100%;height:100%";		
 		document.querySelector(".dis_output").style.cssText="width:0;height:0";
 
@@ -21859,8 +21869,8 @@ function() {
 $(document).on("click",
 "#bad_res_speed",
 function() {
-		document.querySelector("#good_res_speed").style.cssText="background:none;color:#cccccc";
-		document.querySelector("#bad_res_speed").style.cssText="background:#996633;color:#fff";
+		document.querySelector("#good_res_speed").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#bad_res_speed").style.cssText="background:#996633;color:#fff;opacity:1";
 		document.querySelector(".good_output").style.cssText="width:0;height:0";		
 		document.querySelector(".dis_output").style.cssText="width:100%;height:100%";		
 
@@ -21936,10 +21946,6 @@ inputEditor.setValue("example@gmail.com");
 			document.querySelector(".dis_output").style.cssText="width:0;height:0";
 			document.querySelector(".notfound_output").style.cssText="width:0;height:0";
 			document.querySelector(".res_tab_menu").style.cssText="border-color:#604020";
-			document.querySelector("#good_res").style.cssText="background:#996633;color:#fff";
-			document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc";
-			document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc";
-			document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc";
 			$("#good_badge").text("");
 			$("#ver_badge").text("");
 			$("#dis_badge").text("");
@@ -21970,23 +21976,7 @@ inputEditor.setValue("example@gmail.com");
         function() {
 		 inputEditor.setValue("");
 		document.querySelector('#clear_audio').play();		 
-			});	
-	$(document).on("click",
-        "#check_btn",
-        function() {
-			document.querySelector("#mail-progress-bar").style.cssText="width:0!important;transition:2s";
-			goodEditor.setValue("");
-			verEditor.setValue("");
-			notExistEditor.setValue("");
-			disableEditor.setValue("");
-			allResult = {
-				ver: [],
-				good: [],
-				notExist: [],
-				disable: [],
-			};
-			mails2 = [];			
-        });		
+			});		
 	$(document).on("click",
         "#paste_clip",
         async function paste() {
@@ -22076,14 +22066,15 @@ async function sleep(ms) {
 }
 
 async function checkMails(smallParts, totalNeedCheck) {
-	abp.notify.info(" Checking...");
-		goodEditor.setValue("Checking...");	
-		verEditor.setValue("Checking...");	
-		notExistEditor.setValue("Checking...");	
-		disableEditor.setValue("Checking...");
+
 		document.querySelector(".mail_input").style.cssText="width:0%;height:0%";		
 		document.querySelector(".good_output").style.cssText="width:100%;height:100%";
-		document.querySelector("#good_res").style.cssText="background:#996633;color:#fff";
+		document.querySelector("#good_res").style.cssText="background:#996633;color:#fff;opacity:1";
+		document.querySelector("#ver_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#dis_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#notfound_res").style.cssText="background:none;color:#cccccc;opacity:0.5";
+		document.querySelector("#good_res_speed").style.cssText="background:#996633;color:#fff;opacity:1";
+		document.querySelector("#bad_res_speed").style.cssText="background:none;color:#cccccc;opacity:0.5";
 		document.querySelector("#good_res_speed").style.cssText="background:#996633;color:#fff";
 		document.querySelector('#start_audio').play();
 		$(".res_tab_menu h3").hide();
@@ -22097,6 +22088,11 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$("#notfound_badge").text(" 0 ");
 		$("#good_speed_badge").text(" 0 ");
 		$("#bad_speed_badge").text(" 0 ");
+		abp.notify.info(" Checking...");
+		goodEditor.setValue("Checking...");	
+		verEditor.setValue("Checking...");	
+		notExistEditor.setValue("Checking...");	
+		disableEditor.setValue("Checking...");
 		
 	
 		
@@ -22195,6 +22191,7 @@ async function checkMails(smallParts, totalNeedCheck) {
     }
 	$("#check_btn").hide();
 	$("#recheck_btn").show();
+	abp.notify.info(" COMPLETED!");
 	document.querySelector('#finish_audio').play();
     abp.ui.clearBusy();
 
