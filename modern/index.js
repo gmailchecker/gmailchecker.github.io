@@ -22118,7 +22118,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				disableEditor.setValue("Checking...");		
 				await sleep(2500);
 				abp.notify.info(" Please wait...");				
-				continue;
+				break;
 				
             } else {
                 break;
@@ -22167,7 +22167,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$(".header_base").css("position", "relative");
 		}	
 			await sleep(5000);
-			abp.notify.warn(" Please check your connection and try again");		
+			abp.notify.warn(" Something went wrong, please try again later");		
             abp.ui.clearBusy();
             return;
         }
