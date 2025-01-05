@@ -142,7 +142,7 @@
 	.header{height:180px;width:100%;}
 	.gchecker1{background:#fff!important}
 	.btn-executor{padding:10px 0px 10px 0px;}
-	#clear-editor,#turbo-btn1,#turbo-btn2,#check-btn{height:60px}
+	#clear-editor,#turbo-btn,#check-btn{height:60px}
 	.gchecker{padding:10px 10px 0px 10px}
 	.result{padding:0px 10px 0px 10px;gap:5px}
 }
