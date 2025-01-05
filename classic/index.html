@@ -22105,10 +22105,47 @@ async function checkMails(smallParts, totalNeedCheck) {
         while (true) {
             result = await requestCheckMails(mails);
             if (result === false) {
-                abp.notify.info(" 📡 network error!");
-				abp.notify.info(" ⚠️ please check your connection or try to change server...");
 				document.querySelector('#disconnect_audio').play();
-                await sleep(2500);
+                abp.notify.warn(" 📡 network error detected!");
+				await sleep(1000);
+				document.querySelector('#disconnect_audio').play();
+				abp.notify.success("💡 smart mode activated");
+				await sleep(1000);
+				if (model == 1) {
+				abp.notify.warn(" server changed to SERVER 2");
+				  model = 2;
+				$(".mode1").hide();
+				$(".mode2").show();
+				$("#server_2 span").show();
+				$("#server_1 span").hide();
+				document.querySelector("#server_1").style.cssText="font-weight:300;opacity :0.7";
+				document.querySelector("#server_2").style.cssText="font-weight:500;opacity :1";				
+				} else if (model == 3) {
+				abp.notify.warn(" server changed to SERVER 2");
+				  model = 2;
+				$(".mode1").hide();
+				$(".mode2").show();
+				$("#server_2 span").show();
+				$("#server_1 span").hide();	
+				document.querySelector("#server_1").style.cssText="font-weight:300;opacity :0.7";
+				document.querySelector("#server_2").style.cssText="font-weight:500;opacity :1";				
+				} else if (model == 2) {
+				abp.notify.warn(" server changed to SERVER 1");
+				  model = 1;
+				$(".mode1").show();
+				$(".mode2").hide();
+				$("#server_2 span").hide();
+				$("#server_1 span").show();
+				document.querySelector("#server_1").style.cssText="font-weight:500;opacity :1";
+				document.querySelector("#server_2").style.cssText="font-weight:300;opacity :0.7";					  
+				}
+			$(".adv_res").show();
+			$(".speed_res").hide();
+			document.querySelector('#mode_audio').play();
+			document.querySelector("#advanced_mode2").style.cssText="font-weight:bold;border:2px #cc9966;border-style:hidden hidden ridge hidden;opacity:1";
+			document.querySelector("#speed_mode2").style.cssText="font-weight:300;border:none;opacity:0.7";
+			$("#advanced_mode2 .mode_on").show();
+			$("#speed_mode2 .mode_on").hide();				
                 continue;
             } else {
                 break;
