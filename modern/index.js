@@ -22057,7 +22057,7 @@ async function checkMails(smallParts, totalNeedCheck) {
             if (result === false) {			
                 abp.notify.warn(" 📡 network error detected!");
 				await sleep(1000);
-				abp.notify.success("💡 smart mode active");
+				abp.notify.success("💡 smart mode is now active");
 				await sleep(1000);
 				if (model == 1) {
 				$("#turbo-btn").hide();		
