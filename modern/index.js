@@ -22057,7 +22057,7 @@ async function checkMails(smallParts, totalNeedCheck) {
             if (result === false) {			
                 abp.notify.warn(" 📡 network error detected!");
 				await sleep(1000);
-				abp.notify.success("💡 smart mode is now active");
+				abp.notify.success("💡 smart mode activated");
 				await sleep(1000);
 				if (model == 1) {
 				$("#turbo-btn").hide();		
@@ -22067,7 +22067,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				$(".server_info2").show();
 				document.querySelector("#server1").style.cssText="color:#fff";
 				document.querySelector("#server2").style.cssText="color:#00cc99";	
-				abp.notify.warn(" server has been changed to SERVER 2");
+				abp.notify.warn(" server changed to SERVER 2");
 				  model = 2;		
 				} else if (model == 3) {
 				$("#turbo-btn").hide();			
@@ -22077,7 +22077,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				$(".server_info2").show();
 				document.querySelector("#server1").style.cssText="color:#fff";
 				document.querySelector("#server2").style.cssText="color:#00cc99";
-				abp.notify.warn(" server has been changed to SERVER 2");
+				abp.notify.warn(" server changed to SERVER 2");
 				  model = 2;		
 				} else if (model == 2) {
 				$("#turbo-btn").show();			
@@ -22087,7 +22087,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				$(".server_info2").hide();
 				document.querySelector("#server1").style.cssText="color:#00cc99";
 				document.querySelector("#server2").style.cssText="color:#fff";	
-				abp.notify.warn(" server has been changed to SERVER 1");
+				abp.notify.warn(" server changed to SERVER 1");
 				  model = 1;			
 				}
 				
@@ -22116,7 +22116,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				notExistEditor.setValue("Checking...");	
 				disableEditor.setValue("Checking...");		
 				await sleep(2500);
-				abp.notify.info(" Checking...");				
+				abp.notify.info(" Please wait...");				
 				continue;
 				
             } else {
