@@ -22118,7 +22118,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				disableEditor.setValue("Checking...");		
 				await sleep(2500);
 				abp.notify.info(" Please wait...");				
-				break;
+				continue;
 				
             } else {
                 break;
