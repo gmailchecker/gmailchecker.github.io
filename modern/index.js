@@ -1883,7 +1883,7 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( ".boxi" ).prepend( $( "<div class='gchecker'>" ) );
 	$( ".gchecker" ).after( $( "<div class='result'>" ) );
 	$( ".result" ).after( $( "<div class='footer'>" ) );		
-	$( ".footer" ).append( $( "<div class='tele_group_link'><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' ><button class='tele_group_link_btn'><image class='joinus' src='join.gif'><image class='tele_group_link_img' src='tele.gif'></image>Telegram Group</button><a/></div>" ) );
+	$( ".footer" ).append( $( "<div class='tele_group_link'><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' ><button class='tele_group_link_btn'><image class='tele_group_link_img' src='tele.gif'></image>Telegram Group</button><a/></div>" ) );
 	$( ".gchecker" ).append( $( "<div class='header_base'>" ) );
 	$( ".header_base" ).append( $( "<div class='header'>" ) );
 	$( ".gchecker" ).prepend( $( "<div class='dark_light'>" ) );
