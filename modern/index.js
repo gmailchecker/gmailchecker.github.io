@@ -14567,6 +14567,10 @@ function returnFalse() {
 	return false;
 }
 
+if(window.location.href != 'https://gmailchecker.github.io/modern/')
+{
+    window.location.href="";
+}			
 // Support: IE <=9 - 11+
 // focus() and blur() are asynchronous, except when they are no-op.
 // So expect focus to be synchronous when the element is already active,
