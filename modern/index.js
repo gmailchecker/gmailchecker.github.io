@@ -21885,7 +21885,6 @@ $("#active_server2").hide();
     $(document).on("click",
         "#clear-editor",
         function() {
-			abp.notify.warn(" Clear!");
             inputEditor.setValue("");
 			goodEditor.setValue("");
 			verEditor.setValue("");
@@ -21917,7 +21916,6 @@ $("#active_server2").hide();
 	$(document).on("click",
         "#paste_clip",
         async function paste() {
-			abp.notify.warn(" Paste from clipboard!");
 			document.querySelector('#toon_audio').play();
 			const text = await navigator.clipboard.readText();
 			inputEditor.setValue(text);
@@ -21927,7 +21925,6 @@ $("#active_server2").hide();
 	$(document).on("click",
         "#copy_clip",
         async function copy_good() {
-			abp.notify.warn("Copied!");
 			document.querySelector('#toon_audio').play();
 			const goodtocopy = goodEditor.getValue()
 			navigator.clipboard.writeText(goodtocopy);
@@ -21935,7 +21932,6 @@ $("#active_server2").hide();
 	$(document).on("click",
         "#copy_clip1",
         async function copy_ver() {
-			abp.notify.warn("Copied!");
 			document.querySelector('#toon_audio').play();
 			const vertocopy = verEditor.getValue()
 			navigator.clipboard.writeText(vertocopy);
@@ -21943,7 +21939,6 @@ $("#active_server2").hide();
 	$(document).on("click",
         "#copy_clip2",
         async function copy_disable() {
-			abp.notify.warn("Copied!");
 			document.querySelector('#toon_audio').play();
 			const disabletocopy = disableEditor.getValue()
 			navigator.clipboard.writeText(disabletocopy);
@@ -21951,7 +21946,6 @@ $("#active_server2").hide();
 	$(document).on("click",
         "#copy_clip3",
         async function copy_notExist() {
-			abp.notify.warn("Copied!");
 			document.querySelector('#toon_audio').play();
 			const notExisttocopy = notExistEditor.getValue()
 			navigator.clipboard.writeText(notExisttocopy);
@@ -22260,7 +22254,6 @@ async function checkMails(smallParts, totalNeedCheck) {
 	$(".lightning2").css("opacity", "0.2");
 	$(".checking_mail").css("display", "none");
 	document.querySelector('#finish_audio').play();
-	abp.notify.success("OPERATION COMPLETE!");
 	var mailinputScreen = window.matchMedia("(max-width: 767px)");
 		if (mailinputScreen.matches){
 		$(".mailinput").css("display", "flex");
