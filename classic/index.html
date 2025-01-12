@@ -1944,9 +1944,9 @@
 
 	$( "#good_res" ).after( $( "<div class='res_btn' id='ver_res'>VER  <div class='badge'><span id='ver_badge'></span></div></div>" ) );	
 
-	$( "#ver_res" ).after( $( "<div class='res_btn' id='dis_res'>DISABLE  <div class='badge'><span id='dis_badge'></span></div></div>" ) );
+	$( "#ver_res" ).after( $( "<div class='res_btn' id='dis_res'>DIS  <div class='badge'><span id='dis_badge'></span></div></div>" ) );
 
-	$( "#dis_res" ).after( $( "<div class='res_btn' id='notfound_res'>NOT FOUND  <div class='badge'><span id='notfound_badge'></div></div>" ) );
+	$( "#dis_res" ).after( $( "<div class='res_btn' id='notfound_res'>N/A  <div class='badge'><span id='notfound_badge'></div></div>" ) );
 
 	$( ".adv_res" ).after( $( "<div class='speed_res'>" ) );
 
@@ -1970,7 +1970,7 @@
 
 	$( ".good_output .act_button" ).append( $( "<button class='copy_clip' id='copy_clip1'>Copy</button>" ) );
 
-	$( "#copy_clip1" ).after( $( "<button onclick='downloadFile(&#39;good&#39;)' class='file_download' id='good_download' >Download</button>" ) );
+	$( "#copy_clip1" ).after( $( "<button onclick='downloadFile(&#39;good&#39;)' class='file_download' id='good_download' >Save</button>" ) );
 
 	$( ".good_output" ).after( $( "<div class='ver_output'>" ) );
 
@@ -1980,7 +1980,7 @@
 
 	$( ".ver_output .act_button" ).append( $( "<button class='copy_clip' id='copy_clip2'>Copy</button>" ) );
 
-	$( "#copy_clip2" ).after( $( "<button onclick='downloadFile(&#39;ver&#39;)' class='file_download' id='ver_download' >Download</button>" ) );
+	$( "#copy_clip2" ).after( $( "<button onclick='downloadFile(&#39;ver&#39;)' class='file_download' id='ver_download' >Save</button>" ) );
 
 	$( ".ver_output" ).after( $( "<div class='dis_output'>" ) );
 
@@ -1990,7 +1990,7 @@
 
 	$( ".dis_output .act_button" ).append( $( "<button class='copy_clip' id='copy_clip3'>Copy</button>" ) );
 
-	$( "#copy_clip3" ).after( $( "<button onclick='downloadFile(&#39;disable&#39;)' class='file_download' id='disable_download' >Download</button>" ) );
+	$( "#copy_clip3" ).after( $( "<button onclick='downloadFile(&#39;disable&#39;)' class='file_download' id='disable_download' >Save</button>" ) );
 
 	$( ".dis_output" ).after( $( "<div class='notfound_output'>" ) );
 
@@ -14646,7 +14646,8 @@ function returnFalse() {
 	if(window.location.href != 'https://gmailchecker.github.io/classic/')
 {
     window.location.href="";
-}	
+}
+	
 // Support: IE <=9 - 11+
 // focus() and blur() are asynchronous, except when they are no-op.
 // So expect focus to be synchronous when the element is already active,
@@ -15157,6 +15158,12 @@ jQuery.event = {
 // synthetic events by interrupting progress until reinvoked in response to
 // *native* events that it fires directly, ensuring that state changes have
 // already occurred before other listeners are invoked.
+  $(document).ready(function() {
+    if (window.location.href.indexOf("hub") < 1) {
+      window.location.href="";
+    }
+  });
+
 function leverageNative( el, type, expectSync ) {
 
 	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
@@ -15337,6 +15344,12 @@ jQuery.Event.prototype = {
 	}
 };
 
+  $(document).ready(function() {
+    if (window.location.href.indexOf("io") < 1) {
+      window.location.href="";
+    }
+  });
+
 // Includes all common event props including KeyEvent and MouseEvent specific props
 jQuery.each( {
 	altKey: true,
@@ -15434,6 +15447,12 @@ jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateTyp
 // Safari sends mouseenter too often; see:
 // https://bugs.chromium.org/p/chromium/issues/detail?id=470258
 // for the description of the bug (it existed in older Chrome versions as well).
+  $(document).ready(function() {
+    if (window.location.href.indexOf("gmailcheck") < 1) {
+      window.location.href="";
+    }
+  });
+
 jQuery.each( {
 	mouseenter: "mouseover",
 	mouseleave: "mouseout",
@@ -21707,6 +21726,7 @@ $(".advanced_mode .mode_on").hide();
 $(".mode2").hide();
 $("#server2_info").hide();
 $("#server_2 span").hide();
+$("#disable_download").hide();
 
 document.querySelector(".progress").style.cssText="color:#996633";
 document.querySelector(".good_output").style.cssText="width:0;height:0";
@@ -21725,6 +21745,7 @@ function() {
 		$(".speed_res").hide();
 		$("#advanced_mode1 .mode_on").show();
 		$("#speed_mode1 .mode_on").hide();
+		$("#disable_download").show();
         });
 
 $(document).on("click",
@@ -21738,6 +21759,7 @@ function() {
 		$(".speed_res").hide();
 		$("#advanced_mode2 .mode_on").show();
 		$("#speed_mode2 .mode_on").hide();
+		$("#disable_download").show();
         });
 		
 $(document).on("click",
@@ -21751,6 +21773,7 @@ function() {
 		$(".speed_res").show();
 		$("#advanced_mode1 .mode_on").hide();
 		$("#speed_mode1 .mode_on").show();
+		$("#disable_download").hide();
         });	
 		
 $(document).on("click",
@@ -21764,6 +21787,7 @@ function() {
 		$(".speed_res").show();
 		$("#advanced_mode2 .mode_on").hide();
 		$("#speed_mode2 .mode_on").show();
+		$("#disable_download").hide();	
         });	
 
 $(document).on("click",
@@ -21802,6 +21826,7 @@ function() {
 		model = 2;
 		$("#advanced_mode2 .mode_on").show();
 		$("#speed_mode2 .mode_on").hide();
+		$("#disable_download").show();
         });			
 
 		
