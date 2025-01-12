@@ -22428,6 +22428,22 @@ function getCookie(cookieName) {
 			    return "";
 			}
 
+describe('Codemirror', () => {
+  it('can be tested using textarea', () => {
+    cy.visit('https://codemirror.net/')
+    // CodeMirror's editor doesn't let us clear it from the
+    // textarea, but we can read the Window object and then
+    // invoke `setValue` on the editor global
+    cy.window().then(win => {
+      win.editor.setValue("")
+    })
+    cy.get('.CodeMirror textarea')
+    // we use `force: true` below because the textarea is hidden
+    // and by default Cypress won't interact with hidden elements
+      .type('mail', { force: true })
+  })
+})	
+
 function hidedown(){document.querySelector(".tele_group_link").style.display="flex";document.querySelector(".solid1").style.display="flex";document.querySelector(".tele_group_link").style.display="flex";document.querySelector(".appversion").style.display="block";document.querySelector(".indicator").style.display="flex";document.querySelector(".download-result").style.position="relative";document.querySelector(".download-result").style.padding="0px";document.querySelector(".download-result").style["boxShadow"] = "none";document.querySelector(".download-result").style.animation="none";document.querySelector(".solid2").style.display="block";document.querySelector(".hidedown").style.display="none";document.querySelector(".showdown").style.display="flex";}
 
 
