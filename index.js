@@ -22225,7 +22225,15 @@ async function checkMails(smallParts, totalNeedCheck) {
 				abp.notify.warn(email.email + " (VER) ");
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);
-				abp.notify.error(email.email + " (DIS) ");				
+				if (model == "1") {
+					abp.notify.error(email.email + " (DIS) ");
+				}
+				if (model == "2") {
+					abp.notify.error(email.email + " (DIS) ");
+				}
+				if (model == "3") {
+					abp.notify.error(email.email + " (BAD) ");
+				}				
             } else if (email.status === "Unregistered") {
                 allResult.notExist.push(email.email);
 				abp.notify.info(email.email + " (NA) ");
