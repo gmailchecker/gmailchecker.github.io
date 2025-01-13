@@ -22081,7 +22081,7 @@ inputEditor.setValue("example@gmail.com");
  			var mails1 = inputEditor.getValue().split("\n");
 			mails2 = inputEditor.getValue().split("\n");
 			if (mails.filter(x => x).length === 0) {
-				abp.notify.error(" ❌ Please enter your email address!");
+				abp.notify.info(" ❌ Please enter your email address!");
 				document.querySelector('#error_audio').play();
 				return;
 			}
@@ -22100,8 +22100,8 @@ inputEditor.setValue("example@gmail.com");
 			console.log(mails)
 			if(ok == 0){
 				abp.notify.error("  For example: username@gmail.com");
-				abp.notify.error("  Make sure your email type is Google Mail (Gmail)");
-				abp.notify.error(" ⚠️ No email address detected!");
+				abp.notify.warn("  Make sure your email type is Google Mail (Gmail)");
+				abp.notify.info(" ⚠️ No email address detected!");
 				document.querySelector('#error_audio').play();
 				return;
 			}
@@ -22170,13 +22170,13 @@ async function checkMails(smallParts, totalNeedCheck) {
             result = await requestCheckMails(mails);
             if (result === false) {
 				document.querySelector('#disconnect_audio').play();
-                abp.notify.warn(" 📡 network error detected!");
+                abp.notify.info(" 📡 network error detected!");
 				await sleep(1000);
 				document.querySelector('#disconnect_audio').play();
-				abp.notify.success("💡 smart mode activated");
+				abp.notify.info("💡 smart mode activated");
 				await sleep(1000);
 				if (model == 1) {
-				abp.notify.warn(" server changed to SERVER 2");
+				abp.notify.info(" server changed to SERVER 2");
 				  model = 2;
 				$(".mode1").hide();
 				$(".mode2").show();
@@ -22189,7 +22189,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				$("#advanced_mode2 .mode_on").show();
 				$("#speed_mode2 .mode_on").hide();					
 				} else if (model == 3) {
-				abp.notify.warn(" server changed to SERVER 2");
+				abp.notify.info(" server changed to SERVER 2");
 				  model = 2;
 				$(".mode1").hide();
 				$(".mode2").show();
@@ -22202,7 +22202,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				$("#advanced_mode2 .mode_on").show();
 				$("#speed_mode2 .mode_on").hide();	
 				} else if (model == 2) {
-				abp.notify.warn(" server changed to SERVER 1");
+				abp.notify.info(" server changed to SERVER 1");
 				  model = 1;
 				$(".mode1").show();
 				$(".mode2").hide();
