@@ -58,7 +58,7 @@
 	$(document).on("click",
         "#server1",
         function() {
-			document.querySelector(".turbo_btn").style.cssText="pointer-events:visible;filter: grayscale(0);";
+			document.querySelector(".turbo_btn").style.cssText="pointer-events:visible;filter: grayscale(0);z-index:999";
 			$(".turbo_off").show();
 			$(".turbo_on").hide();
 			$("#active_server1").show();	
@@ -113,7 +113,7 @@
 	$(document).on("click",
         "#server2",
         function() {
-			document.querySelector(".turbo_btn").style.cssText="pointer-events:none;filter: grayscale(1);";
+			document.querySelector(".turbo_btn").style.cssText="pointer-events:none;filter: grayscale(1);z-index:999";
 			$(".turbo_off").show();
 			$(".turbo_on").hide();
 			$("#active_server1").hide();
