@@ -3,7 +3,7 @@
 	$(".server_info2").hide();
 	$(".turbo_on").hide();
 	var model = 1;
-	var nums = 100;	
+	var nums = 4;	
 	$(document).on("click",
         "#turbo-btn",
         function() {
