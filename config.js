@@ -59,6 +59,8 @@
         "#server1",
         function() {
 			document.querySelector(".turbo_btn").style.cssText="pointer-events:visible;filter: grayscale(0);";
+			$(".turbo_off").show();
+			$(".turbo_on").hide();
 			$("#active_server1").show();	
 			$("#active_server2").hide();
 			$(".server_info1").show();
@@ -112,6 +114,8 @@
         "#server2",
         function() {
 			document.querySelector(".turbo_btn").style.cssText="pointer-events:none;filter: grayscale(1);";
+			$(".turbo_off").show();
+			$(".turbo_on").hide();
 			$("#active_server1").hide();
 			$("#active_server2").show();
 			$(".server_info1").hide();
