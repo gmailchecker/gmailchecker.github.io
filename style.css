@@ -8,7 +8,7 @@
 .result{padding:5px 10px 0px 10px;gap:10px}
 .footer{position:relative;padding:5px 0px 5px 0px;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .turbo_btn_active{border-color:#fff!important}
-.active_server{position:absolute;top:0;left:0;pointer-events:none;z-index:1;opacity:0.3}
+.active_server{position:absolute;top:0;left:0;pointer-events:none;z-index:1;opacity:0}
 .executor_text{display:none}
 #mbahmatur{display:none!important}
 .indicat2{display:flex}
