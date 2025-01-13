@@ -1,11 +1,14 @@
 	$( ".header" ).append( $( "<p class='server_info1'>SERVER : 1</>" ) );
 	$( ".header" ).append( $( "<p class='server_info2'>SERVER : 2</>" ) );
 	$(".server_info2").hide();
+	$(".turbo_on").hide();
 	var model = 1;
 	var nums = 100;	
 	$(document).on("click",
         "#turbo-btn",
         function() {
+			$(".turbo_off").toggle();
+			$(".turbo_on").toggle();
 			$("#mailoutput2").toggle();
 			$("#mailoutput4").toggle();
 			$(".h3_disabled").toggle();
@@ -55,7 +58,7 @@
 	$(document).on("click",
         "#server1",
         function() {
-			$("#turbo-btn").show();
+			document.querySelector(".turbo_btn").style.cssText="pointer-events:visible;filter: grayscale(0);";
 			$("#active_server1").show();	
 			$("#active_server2").hide();
 			$(".server_info1").show();
@@ -108,7 +111,7 @@
 	$(document).on("click",
         "#server2",
         function() {
-			$("#turbo-btn").hide();
+			document.querySelector(".turbo_btn").style.cssText="pointer-events:none;filter: grayscale(1);";
 			$("#active_server1").hide();
 			$("#active_server2").show();
 			$(".server_info1").hide();
@@ -156,4 +159,23 @@
 			};
 			mails2 = [];
 			model = 2;			
-        });			
+        });	
+
+
+		$(".verify_on").hide();	
+		$(".reset_on").hide();
+		$(".reset_hover").hide();
+		
+	var btnhoverscreen = window.matchMedia("(min-width: 1025px)");
+		if (btnhoverscreen.matches){
+
+		$("#check-btn").hover(function(){
+			$(".verify_on").toggle();
+			$(".verify_off").toggle();
+		});
+		
+		$("#clear-editor").hover(function(){
+			$(".reset_hover").toggle();
+			$(".reset_off").toggle();
+		});
+		}	
