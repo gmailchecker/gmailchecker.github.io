@@ -22111,7 +22111,8 @@ async function checkMails(smallParts, totalNeedCheck) {
 				document.querySelector("#server1").style.cssText="color:#fff";
 				document.querySelector("#server2").style.cssText="color:#00cc99";	
 				abp.notify.warn(" server changed to SERVER 2");
-				  model = 2;		
+				  model = 2;
+				  nums = 25;	
 				} else if (model == 3) {
 				$("#turbo-btn").hide();			
 				$("#active_server1").hide();
@@ -22121,7 +22122,8 @@ async function checkMails(smallParts, totalNeedCheck) {
 				document.querySelector("#server1").style.cssText="color:#fff";
 				document.querySelector("#server2").style.cssText="color:#00cc99";
 				abp.notify.warn(" server changed to SERVER 2");
-				  model = 2;		
+				  model = 2;
+				  nums = 25;	
 				} else if (model == 2) {
 				$("#turbo-btn").show();			
 				$("#active_server1").show();
@@ -22131,7 +22133,8 @@ async function checkMails(smallParts, totalNeedCheck) {
 				document.querySelector("#server1").style.cssText="color:#00cc99";
 				document.querySelector("#server2").style.cssText="color:#fff";	
 				abp.notify.warn(" server changed to SERVER 1");
-				  model = 1;			
+				  model = 1;
+				  nums = 25;	
 				}
 				
 				$("#mailoutput2").show();
