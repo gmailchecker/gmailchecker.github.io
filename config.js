@@ -53,6 +53,11 @@
 			} else {
 			  model = "3";
 			}
+			if (nums === "100") {
+			  nums = "25";
+			} else {
+			  nums = "100";
+			}
         });
 		
 	$(document).on("click",
@@ -107,7 +112,8 @@
 				disable: [],
 			};
 			mails2 = [];
-			model = 1;			
+			model = 1;
+			nums = 25;
         });
 
 	$(document).on("click",
@@ -162,7 +168,8 @@
 				disable: [],
 			};
 			mails2 = [];
-			model = 2;			
+			model = 2;
+			nums = 25;			
         });	
 
 
