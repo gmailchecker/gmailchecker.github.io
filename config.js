@@ -3,7 +3,7 @@
 	$(".server_info2").hide();
 	$(".turbo_on").hide();
 	var model = 1;
-	var nums = 25;	
+	var nums = 100;	
 	$(document).on("click",
         "#turbo-btn",
         function() {
@@ -53,11 +53,7 @@
 			} else {
 			  model = "3";
 			}
-			if (nums === "100") {
-			  nums = "25";
-			} else {
-			  nums = "100";
-			}
+
         });
 		
 	$(document).on("click",
@@ -113,7 +109,7 @@
 			};
 			mails2 = [];
 			model = 1;
-			nums = 25;
+			nums = 100;
         });
 
 	$(document).on("click",
@@ -169,7 +165,7 @@
 			};
 			mails2 = [];
 			model = 2;
-			nums = 25;			
+			nums = 999;			
         });	
 
 
