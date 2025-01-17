@@ -2,7 +2,7 @@
 	$( ".header" ).append( $( "<p class='server_info2'>SERVER : 2</>" ) );
 	$(".server_info2").hide();
 	$(".turbo_on").hide();
-	var model = 2;
+	var model = 1;
 	var nums = 100;	
 	$(document).on("click",
         "#turbo-btn",
@@ -49,7 +49,7 @@
 			};
 			mails2 = [];
 			if (model === "3") {
-			  model = "2";
+			  model = "1";
 			} else {
 			  model = "3";
 			}
@@ -108,7 +108,7 @@
 				disable: [],
 			};
 			mails2 = [];
-			model = 2;
+			model = 1;
         });
 
 	$(document).on("click",
