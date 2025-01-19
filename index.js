@@ -1890,7 +1890,7 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( ".header_base" ).append( $( "<div class='header'>" ) );
 	$( ".gchecker" ).prepend( $( "<div class='dark_light'>" ) );
 	$( ".darkmode" ).after( $( "<div class='lightmode' id='dark_light' onclick='lightmode()'>☼</div>" ) );
-	$( ".header" ).append( $( "<image class='lightning' src='anim1.gif'></image>" ) );
+	$( ".header" ).append( $( "<image class='lightning' src='https://i.seadn.io/gae/S_r4TytZy2vlMzUsspxZ5wD_x-1kSbVBXbiDm_nN5GdVXvPdUEAFNMJQWeRGe0kKBhNLMM_gsHZCUSgzqnFxmfDx-V7_VkWVGc6VVw?auto=format&dpr=1&w=1000'></image>" ) );
 	$( ".header" ).append( $( "<image class='lightning1' src='hny.gif'></image>" ) );
 	$( ".header" ).append( $( "<image class='lightning2' src='lightning.gif'></image>" ) );	
 	$( ".header" ).append( $( "<image class='checking_mail' src='run2.gif' style='display:none'></image>" ) );
