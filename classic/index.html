@@ -22169,6 +22169,10 @@ async function checkMails(smallParts, totalNeedCheck) {
         while (true) {
             result = await requestCheckMails(mails);
             if (result === false) {
+		    		abp.notify.warn("something went wrong!");
+				await sleep(10000);
+				abp.notify.info("please wait...");				
+				await sleep(5000);
 				document.querySelector('#disconnect_audio').play();
                 abp.notify.info(" 📡 network error detected!");
 				await sleep(1000);
@@ -22217,9 +22221,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				}
 			$(".adv_res").show();
 			$(".speed_res").hide();
-			document.querySelector('#mode_audio').play();
-			await sleep(2500);
-			abp.notify.info(" Please wait...");	
+			document.querySelector('#mode_audio').play();	
                 continue;
             } else {
                 break;
