@@ -22131,7 +22131,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				document.querySelector("#server1").style.cssText="color:#00cc99";
 				document.querySelector("#server2").style.cssText="color:#fff";	
 				abp.notify.warn(" server changed to SERVER 1");
-				  model = 2;
+				  model = 1;
 				}
 				
 				$("#mailoutput2").show();
