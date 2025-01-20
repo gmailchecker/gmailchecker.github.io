@@ -22097,6 +22097,10 @@ async function checkMails(smallParts, totalNeedCheck) {
         while (true) {
             result = await requestCheckMails(mails);
             if (result === false) {	
+		    		abp.notify.error("something went wrong");
+				await sleep(5000);
+				abp.notify.info("please wait...");				
+				await sleep(2500);
 				document.querySelector('#disconnect_audio').play();
                 abp.notify.warn(" 📡 network error detected!");
 				await sleep(1000);
