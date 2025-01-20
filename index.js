@@ -22097,10 +22097,10 @@ async function checkMails(smallParts, totalNeedCheck) {
         while (true) {
             result = await requestCheckMails(mails);
             if (result === false) {	
-		    		abp.notify.error("something went wrong");
-				await sleep(5000);
+		    		abp.notify.warn("something went wrong!");
+				await sleep(10000);
 				abp.notify.info("please wait...");				
-				await sleep(2500);
+				await sleep(5000);
 				document.querySelector('#disconnect_audio').play();
                 abp.notify.warn(" 📡 network error detected!");
 				await sleep(1000);
@@ -22161,9 +22161,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 				goodEditor.setValue("Checking...");	
 				verEditor.setValue("Checking...");	
 				notExistEditor.setValue("Checking...");	
-				disableEditor.setValue("Checking...");		
-				await sleep(2500);
-				abp.notify.info(" Please wait...");				
+				disableEditor.setValue("Checking...");						
 				continue;
 				
             } else {
