@@ -22099,13 +22099,10 @@ async function checkMails(smallParts, totalNeedCheck) {
             if (result === false) {	
 				if (model == 1) {
 				  model = 2;
-				} else if (model == 3) {
-				  model = 2;	
 				} else if (model == 2) {
 				  model = 1;	
 				}
-				continue;			
-				
+				continue;	
             } else {
                 break;
             }
