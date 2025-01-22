@@ -22271,9 +22271,10 @@ async function checkMails(smallParts, totalNeedCheck) {
 	$("#recheck_btn").show();
 	abp.notify.info("✅ "  + "Total Checked: " + totalChecked);
 	document.querySelector('#finish_audio').play();
+    abp.ui.clearBusy();	
+	await sleep(6000);
 	document.querySelector(".engine").style.cssText="position:static";
-	document.querySelector("#toast-container").style.cssText="border-radius:0px";	
-    abp.ui.clearBusy();
+	document.querySelector("#toast-container").style.cssText="border-radius:0px";
 
 	
 	
