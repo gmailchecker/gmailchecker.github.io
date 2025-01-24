@@ -22051,10 +22051,6 @@ async function checkMails(smallParts, totalNeedCheck) {
 				if (model == 2) {
 				  model = 2;
 				}
-				await sleep(1);				
-				if (model == 1) {
-				  model = 2;
-				} 
 				await sleep(1);
 				if (model == 2) {
 				  model = 1;	
