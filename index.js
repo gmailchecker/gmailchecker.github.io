@@ -22044,6 +22044,17 @@ async function sleep(ms) {
 }
 
 async function checkMails(smallParts, totalNeedCheck) {
+				if (model == 1) {
+				  model = 2;
+				} 
+				await sleep(1);
+				if (model == 2) {
+				  model = 1;	
+				}
+				await sleep(1);
+				if (model == 1) {
+				  model = 2;
+				} 
 	abp.notify.info(" Checking...");
 	$(".verify_on").toggle();
 	$(".verify_off").toggle();
@@ -22102,14 +22113,17 @@ async function checkMails(smallParts, totalNeedCheck) {
 				} else if (model == 2) {
 				  model = 1;	
 				}
-				continue;	
+				break;	
             } else {
                 break;
             }
         }
         console.log(result);
         if (!result || result.length == 0) {
-			
+			$(".verify_on").toggle();
+			$(".verify_off").toggle();
+			$(".reset_on").toggle();
+			$(".reset_off").toggle();
 			goodEditor.setValue("Fail!");	
 			verEditor.setValue("Fail!");	
 			notExistEditor.setValue("Fail!");	
