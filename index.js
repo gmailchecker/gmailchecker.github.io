@@ -22044,16 +22044,24 @@ async function sleep(ms) {
 }
 
 async function checkMails(smallParts, totalNeedCheck) {
-				if (model == 2) {
-				  model = 1;
-				} 
-				await sleep(1);
 				if (model == 1) {
-				  model = 2;	
+				  model = 1;
 				}
 				await sleep(1);
 				if (model == 2) {
-				  model = 1;
+				  model = 2;
+				}
+				await sleep(1);				
+				if (model == 1) {
+				  model = 2;
+				} 
+				await sleep(1);
+				if (model == 2) {
+				  model = 1;	
+				}
+				await sleep(1);
+				if (model == 1) {
+				  model = 2;
 				} 
 	abp.notify.info(" Checking...");
 	$(".verify_on").toggle();
