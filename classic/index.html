@@ -22060,17 +22060,11 @@ async function checkMails(smallParts, totalNeedCheck) {
 		$(".footer_btn").hide();
 		$(".mode").hide();
 		document.querySelector(".good_output").style.cssText="width:100%;height:100%";
-		document.querySelector(".ver_output").style.cssText="width:100%;height:100%";
-		document.querySelector(".dis_output").style.cssText="width:100%;height:100%";
-		document.querySelector(".notfound_output").style.cssText="width:100%;height:100%";
 		abp.notify.info(" Checking...");
 		goodEditor.setValue("Checking...");	
 		verEditor.setValue("Checking...");	
 		notExistEditor.setValue("Checking...");	
 		disableEditor.setValue("Checking...");
-		document.querySelector(".ver_output").style.cssText="width:0%;height:0%";
-		document.querySelector(".dis_output").style.cssText="width:0%;height:0%";
-		document.querySelector(".notfound_output").style.cssText="width:0%;height:0%";
 		$("#good_badge").text(" 0 ");
 		$("#ver_badge").text(" 0 ");
 		$("#dis_badge").text(" 0 ");
