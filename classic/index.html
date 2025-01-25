@@ -22190,6 +22190,7 @@ async function checkMails(smallParts, totalNeedCheck) {
         totalChecked += result.length;
 	document.querySelector(".engine").style.cssText="position:relative";
 	document.querySelector("#toast-container").style.cssText="height:100%;background:#331a00;opacity:0.9;border-radius:10px;padding:10px 0px 0px 30px ;z-index:9999999";
+	document.querySelector(".progress").style.cssText="position:absolute;bottom:0;z-index:99999999";    
         result.forEach(email => {
             if (email.status === "live") {
                 allResult.good.push(email.email);
@@ -22278,6 +22279,7 @@ async function checkMails(smallParts, totalNeedCheck) {
 	await sleep(6000);
 	document.querySelector(".engine").style.cssText="position:static";
 	document.querySelector("#toast-container").style.cssText="border-radius:0px";
+	document.querySelector(".progress").style.cssText="position:relative";
 
 	
 	
