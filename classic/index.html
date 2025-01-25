@@ -1941,13 +1941,13 @@
 
 	$( ".input_title" ).after( $( "<div class='adv_res'>" ) );
 
-	$( ".adv_res" ).append( $( "<div class='res_btn' id='good_res'>GOOD  <div class='badge'><span id='good_badge'></span></div></div>" ) );
+	$( ".adv_res" ).append( $( "<div class='res_btn' id='good_res'>LIVE  <div class='badge'><span id='good_badge'></span></div></div>" ) );
 
-	$( "#good_res" ).after( $( "<div class='res_btn' id='ver_res'>VER  <div class='badge'><span id='ver_badge'></span></div></div>" ) );	
+	$( "#good_res" ).after( $( "<div class='res_btn' id='ver_res'>VERIFICATION  <div class='badge'><span id='ver_badge'></span></div></div>" ) );	
 
-	$( "#ver_res" ).after( $( "<div class='res_btn' id='dis_res'>DIS  <div class='badge'><span id='dis_badge'></span></div></div>" ) );
+	$( "#ver_res" ).after( $( "<div class='res_btn' id='dis_res'>DISABLE  <div class='badge'><span id='dis_badge'></span></div></div>" ) );
 
-	$( "#dis_res" ).after( $( "<div class='res_btn' id='notfound_res'>NA  <div class='badge'><span id='notfound_badge'></div></div>" ) );
+	$( "#dis_res" ).after( $( "<div class='res_btn' id='notfound_res'>NOT EXIST  <div class='badge'><span id='notfound_badge'></div></div>" ) );
 
 	$( ".adv_res" ).after( $( "<div class='speed_res'>" ) );
 
@@ -22190,31 +22190,38 @@ async function checkMails(smallParts, totalNeedCheck) {
         totalChecked += result.length;
 	document.querySelector(".engine").style.cssText="position:relative";
 	document.querySelector("#toast-container").style.cssText="height:100%;background:#331a00;opacity:0.9;border-radius:10px;padding:10px 0px 0px 30px ;z-index:9999999";
-	document.querySelector(".progress").style.cssText="position:absolute;bottom:0;z-index:99999999";    
         result.forEach(email => {
             if (email.status === "live") {
                 allResult.good.push(email.email);
-				abp.notify.success(email.email + " (GOOD) ");
+		    		if (model == "1") {
+					abp.notify.success(email.email + " (LIVE) ");
+				}
+				if (model == "2") {
+					abp.notify.success(email.email + " (LIVE) ");
+				}
+				if (model == "3") {
+					abp.notify.success(email.email + " (GOOD) ");
+				}
             } else if (email.status === "Verify") {
                 allResult.ver.push(email.email);
-				abp.notify.warn(email.email + " (VER) ");
+				abp.notify.warn(email.email + " (VERIFICATION) ");
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);
 				if (model == "1") {
-					abp.notify.error(email.email + " (DIS) ");
+					abp.notify.error(email.email + " (DISABLE) ");
 				}
 				if (model == "2") {
-					abp.notify.error(email.email + " (DIS) ");
+					abp.notify.error(email.email + " (DISABLE) ");
 				}
 				if (model == "3") {
 					abp.notify.error(email.email + " (BAD) ");
 				}				
             } else if (email.status === "Unregistered") {
                 allResult.notExist.push(email.email);
-				abp.notify.info(email.email + " (NA) ");
+				abp.notify.info(email.email + " (NOT EXIST) ");
             } else if (email.status === "Error") {
                 allResult.notExist.push(email.email);
-				abp.notify.info(email.email + " (NA) ");
+				abp.notify.info(email.email + " (NOT EXIST) ");
 			}
         });
 
@@ -22279,7 +22286,6 @@ async function checkMails(smallParts, totalNeedCheck) {
 	await sleep(6000);
 	document.querySelector(".engine").style.cssText="position:static";
 	document.querySelector("#toast-container").style.cssText="border-radius:0px";
-	document.querySelector(".progress").style.cssText="position:relative";
 
 	
 	
