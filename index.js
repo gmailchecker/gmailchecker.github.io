@@ -21939,7 +21939,7 @@ $("#active_server2").hide();
         });
 	$(document).on("click",
         "#check-btn",
-        function() {
+        function() {    abp.notify.warn("This page is being updated please use the classic theme");
 			goodEditor.setValue("");
 			verEditor.setValue("");
 			notExistEditor.setValue("");
@@ -21990,7 +21990,7 @@ $("#active_server2").hide();
 			navigator.clipboard.writeText(notExisttocopy);
         });
     $(document).on("click",
-        "#check-btn",
+        "#check-bt",
         function() {
             var mails = inputEditor.getValue().split("\n");
  			var mails1 = inputEditor.getValue().split("\n");
