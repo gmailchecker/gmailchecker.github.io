@@ -1939,9 +1939,9 @@
 
 	$( ".adv_res" ).append( $( "<div class='res_btn' id='good_res'>LIVE  <div class='badge'><span id='good_badge'></span></div></div>" ) );
 
-	$( "#good_res" ).after( $( "<div class='res_btn' id='ver_res'>VERIFY  <div class='badge'><span id='ver_badge'></span></div></div>" ) );	
+	$( "#good_res" ).after( $( "<div class='res_btn' id='ver_res'>VER  <div class='badge'><span id='ver_badge'></span></div></div>" ) );	
 
-	$( "#ver_res" ).after( $( "<div class='res_btn' id='dis_res'>DISABLE  <div class='badge'><span id='dis_badge'></span></div></div>" ) );
+	$( "#ver_res" ).after( $( "<div class='res_btn' id='dis_res'>DISABLED  <div class='badge'><span id='dis_badge'></span></div></div>" ) );
 
 	$( "#dis_res" ).after( $( "<div class='res_btn' id='notfound_res'>NOT EXIST  <div class='badge'><span id='notfound_badge'></div></div>" ) );
 
@@ -22144,11 +22144,11 @@ async function checkMails(smallParts, totalNeedCheck) {
 				}
             } else if (email.status === "Verify") {
                 allResult.ver.push(email.email);
-				abp.notify.warn(email.email + " (VERIFY) ");
+				abp.notify.warn(email.email + " (VER) ");
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);
 				if (model == 1 || model == 2) {
-					abp.notify.error(email.email + " (DISABLE) ");
+					abp.notify.error(email.email + " (DISABLED) ");
 				} else {
 					abp.notify.error(email.email + " (BAD) ");
 				}		
@@ -22315,9 +22315,9 @@ abp.notify.warn(" Preparing download file...");
 var textcontent = goodEditor.getValue();
 var downloadableLink = document.createElement('a');
 const date = new Date();
- const formattedDate = date.toLocaleDateString() + " - " +date.toLocaleTimeString();
+ const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "LIVE - Gmail-Checker - " + formattedDate + ".txt";
+downloadableLink.download = "LIVE_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
@@ -22328,9 +22328,9 @@ abp.notify.warn(" Preparing download file...");
 var textcontent = verEditor.getValue();
 var downloadableLink = document.createElement('a');
 const date = new Date();
- const formattedDate = date.toLocaleDateString() + " - " +date.toLocaleTimeString();
+ const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "VERIFY - Gmail-Checker - " + formattedDate + ".txt";
+downloadableLink.download = "VER_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
@@ -22341,9 +22341,9 @@ abp.notify.warn(" Preparing download file...");
 var textcontent = disableEditor.getValue();
 var downloadableLink = document.createElement('a');
 const date = new Date();
- const formattedDate = date.toLocaleDateString() + " - " +date.toLocaleTimeString();
+ const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "DISABLE  - Gmail-Checker - " + formattedDate + ".txt";
+downloadableLink.download = "DISABLED_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
@@ -22354,9 +22354,9 @@ abp.notify.warn(" Preparing download file...");
 var textcontent = goodEditor.getValue();
 var downloadableLink = document.createElement('a');
 const date = new Date();
- const formattedDate = date.toLocaleDateString() + " - " +date.toLocaleTimeString();
+ const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "GOOD - Gmail-Checker - " + formattedDate + ".txt";
+downloadableLink.download = "GOOD_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
@@ -22367,9 +22367,9 @@ abp.notify.warn(" Preparing download file...");
 var textcontent = disableEditor.getValue();
 var downloadableLink = document.createElement('a');
 const date = new Date();
- const formattedDate = date.toLocaleDateString() + " - " +date.toLocaleTimeString();
+ const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "BAD - Gmail-Checker - " + formattedDate + ".txt";
+downloadableLink.download = "BAD_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
