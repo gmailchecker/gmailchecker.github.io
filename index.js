@@ -1903,7 +1903,7 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( ".header_top" ).append( $( "<div class='g_checker_logo'> <image class='g_checker_logo_img' src='gmail-checker.png'></image></div>" ) );
 	$( ".g_checker_logo" ).after( $( "<h1 class='title' style='z-index:90;'>GMAIL CHECKER</h1>" ) );
 	$( ".header_top" ).append( $( "<div class='announcement' style='line-height:20px;gap:10px;display:flex;justify-content:center;width:100%;position:absolute;top:0;left:0;text-align:center;font-family:Verdana,sans-serif;opacity:1;z-index:94;padding:10px 0px 0px 0px;'><p style='color:#ffcc66;font-size:16px;font-weight:600;'>🎺 HAPPY</p><p style='color:#9933ff;font-size:20px;font-weight:bold;'>NEW YEAR</p><p style='color:#ffcc66;font-size:14px;font-weight:400;'>2025 🥂</p></div>" ) );
-	$( ".header_bottom" ).append( $( "<div class='indicat' style='text-shadow: 1px 1px #333333;font-weight:bold;display:flex;align-items:center;padding:5px;z-index:94;width:100%'><div class='downres_item' id='downres_good'><p class='downres_good'style='color:#00cc66'>LIVE</p><p class='downres_speed' style='display:none;color:#00cc66'>GOOD</p><div>:</div><span class='rp-down' id='rp-good' style='color:#fff'></span></div><div class='downres_item ' id='downres_ver'><p style='color:#ffcc00'>VERIFY</p><div>: </div><span class='rp-down' id='rp-ver' style='color:#fff' ></span></div><div class='downres_item' id='downres_disabled'><p class='downres_disabled' style='color:#ff8080'>DISABLE</p><p class='downres_speed' style='display:none;color:#ff8080'>BAD</p><div>: </div><span class='rp-down' id='rp-disabled' style='color:#fff'></span></div><div class='downres_item' id='downres_notfound'><p style='color:#4db8ff'>NOT EXIST</p><div>: </div><span class='rp-down' id='rp-notfound' style='color:#fff' ></span></div></div>" ) );
+	$( ".header_bottom" ).append( $( "<div class='indicat' style='text-shadow: 1px 1px #333333;font-weight:bold;display:flex;align-items:center;padding:5px;z-index:94;width:100%'><div class='downres_item' id='downres_good'><p class='downres_good'style='color:#00cc66'>LIVE</p><p class='downres_speed' style='display:none;color:#00cc66'>GOOD</p><div>:</div><span class='rp-down' id='rp-good' style='color:#fff'></span></div><div class='downres_item ' id='downres_ver'><p style='color:#ffcc00'>VER</p><div>: </div><span class='rp-down' id='rp-ver' style='color:#fff' ></span></div><div class='downres_item' id='downres_disabled'><p class='downres_disabled' style='color:#ff8080'>DISABLED</p><p class='downres_speed' style='display:none;color:#ff8080'>BAD</p><div>: </div><span class='rp-down' id='rp-disabled' style='color:#fff'></span></div><div class='downres_item' id='downres_notfound'><p style='color:#4db8ff'>NOT EXIST</p><div>: </div><span class='rp-down' id='rp-notfound' style='color:#fff' ></span></div></div>" ) );
 	$( ".indicat" ).after( $( "<div class='indi_progress'>" ) );$( ".indi_progress" ).append( $( "<div class='progress progress-lg'>" ) );
 	$( ".progress" ).prepend( $( "<div id='mail-progress-bar' class='progress-bar progress-bar-striped' role='progressbar' style='width: 0%;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'>0%</div>" ) );
 
@@ -21830,13 +21830,13 @@ document.querySelector(".download-result").style.animation="slideup 0.75s"; docu
 	$( "#copy_clip" ).before( $( "<button onclick='downloadFile(&#39;good&#39;)' class='download_item' id='live_download' ><p class='showel'>Save</p><image src='download.png' style='width:16px'></image></button><button onclick='downloadFile(&#39;good&#39;)' class='download_item' id='good_download' ><p class='showel'>Save</p><image src='download.png' style='width:16px'></image></button>" ) );
 	$( "#mailoutput1" ).append( $( "<div style='height:100%;width:100%;display:flex;position:relative;'><image class='snow_image' src='dark.jpg' style='width:100%;height:100%;position:absolute;pointer-events:none;opacity:1'></image><textarea style='display:none' id='mail-output'></textarea></div>" ) );
 	$( "#mailoutput1" ).after( $( "<div class='mailoutput' id='mailoutput2'>" ) );
-	$( "#mailoutput2" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:10'>VERIFY  <span class='res_bad'>| </span><span class='res_bad' id='ver_res'></span></p></h3>" ) );
+	$( "#mailoutput2" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:10'>VER  <span class='res_bad'>| </span><span class='res_bad' id='ver_res'></span></p></h3>" ) );
 	$( "#mailoutput2" ).append( $( "<div style='height:100%;width:100%;display:flex;position:relative;'><image class='snow_image' src='dark.jpg' style='width:100%;height:100%;position:absolute;pointer-events:none;opacity:1'></image><textarea style='display:none' id='ver-output'></textarea></div>" ) );
 	$( "#mailoutput2 h3" ).append( $( "<div class='result_btn1' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 	$( ".result_btn1" ).append( $( "<button onclick='copy_ver()' class='copy_clip' id='copy_clip1'><div class='showel'>Copy</div><image src='copy.png' style='width:16px'></image></button>" ) );
 	$( "#copy_clip1" ).before( $( "<button onclick='downloadFile(&#39;ver&#39;)' class='download_item' id='ver_download' ><p class='showel'>Save</p><image src='download.png' style='width:16px'></image></button>" ) );
 	$( "#mailoutput2" ).after( $( "<div class='mailoutput' id='mailoutput3'>" ) );
-	$( "#mailoutput3" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:10'><a class='h3_adv'>DISABLE  </a> <a class='h3_speed' style='display:none'>BAD  </a>   <span class='res_bad'>| </span><span class='res_bad' id='dis_res'></span></p></h3>" ) );
+	$( "#mailoutput3" ).prepend( $( "<h3 style='display:flex;width:100%;align-items:center;height:50px'><p style='width:100%;position:absolute;z-index:10'><a class='h3_adv'>DISABLED  </a> <a class='h3_speed' style='display:none'>BAD  </a>   <span class='res_bad'>| </span><span class='res_bad' id='dis_res'></span></p></h3>" ) );
 	$( "#mailoutput3" ).append( $( "<div style='height:100%;width:100%;display:flex;position:relative;'><image class='snow_image' src='dark.jpg' style='width:100%;height:100%;position:absolute;pointer-events:none;opacity:1'></image><textarea style='display:none' id='disable-output'></textarea></div>" ) );
 	$( "#mailoutput3 h3" ).append( $( "<div class='result_btn2' style='display:flex;width:100%;justify-content:right;align-items:center;z-index:10'>" ) );
 	$( ".result_btn2" ).append( $( "<button onclick='copy_disable()' class='copy_clip' id='copy_clip2'><div class='showel'>Copy</div><image src='copy.png' style='width:16px'></image></button>" ) );
@@ -22212,11 +22212,11 @@ async function checkMails(smallParts, totalNeedCheck) {
 				}
             } else if (email.status === "Verify") {
                 allResult.ver.push(email.email);
-				abp.notify.warn(email.email + " (VERIFY) ");
+				abp.notify.warn(email.email + " (VER) ");
 			} else if (email.status === "Disabled") {
                 allResult.disable.push(email.email);
 				if (model == 1 || model == 2) {
-					abp.notify.error(email.email + " (DISABLE) ");
+					abp.notify.error(email.email + " (DISABLED) ");
 				} else {
 					abp.notify.error(email.email + " (BAD) ");
 				}		
@@ -22464,7 +22464,7 @@ var downloadableLink = document.createElement('a');
 const date = new Date();
  const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "VERIFY_Gmail-Checker_" + formattedDate + ".txt";
+downloadableLink.download = "VER_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
@@ -22477,7 +22477,7 @@ var downloadableLink = document.createElement('a');
 const date = new Date();
  const formattedDate = date.toLocaleDateString() + "_" +date.toLocaleTimeString();
 downloadableLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textcontent));
-downloadableLink.download = "DISABLE_Gmail-Checker_" + formattedDate + ".txt";
+downloadableLink.download = "DISABLED_Gmail-Checker_" + formattedDate + ".txt";
 document.body.appendChild(downloadableLink);
 downloadableLink.click();
 document.body.removeChild(downloadableLink);
