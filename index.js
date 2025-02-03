@@ -1881,6 +1881,8 @@ $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;h
 	$( "body" ).prepend( $( "<div class='flexi'>" ) );
 	$( "body" ).append( $( "<audio id='disconnect_audio' src='disconnect.mp3' preload='auto'></audio><audio id='mode_audio' src='mode.mp3' preload='auto'></audio><audio id='checked_audio' src='checked.mp3' preload='auto'></audio><audio id='turbo_audio' src='turbo.mp3' preload='auto'></audio><audio id='finish_audio' src='finish.mp3' preload='auto'></audio><audio id='error_audio' src='error.mp3' preload='auto'></audio><audio id='shock_audio' src='shock.mp3' preload='auto'></audio><audio id='cleared_audio' src='uek.mp3' preload='auto'></audio><audio id='toon_audio' src='uhoh.mp3' preload='auto'></audio>" ) );
 	$( ".flexi" ).prepend( $( "<div class='boxi'>" ) );
+	$( ".flexi" ).prepend( $( "<div id='duplicatePopup' class='popup'><span class='badge' id='duplicate-count'></span><div class='popup-buttons'><button id='remove-duplicates' class='btn btn-danger'>Remove Duplicates</button><button id='close-popup' class='btn btn-secondary'>Close</button> <p id='duplicate-emails'></p> </div> </div>" ) );
+	$( ".flexi" ).prepend( $( "	<button id='playButton' style='display: none;'>Play Audio</button>" ) );
 	$( ".boxi" ).prepend( $( "<div class='gchecker'>" ) );
 	$( ".gchecker" ).after( $( "<div class='result'>" ) );
 	$( ".result" ).after( $( "<div class='footer'>" ) );		
@@ -1936,14 +1938,6 @@ function typewriter(element, text, delay = 300) {
     }, delay * i);
   }
 }
-
-const el = document.getElementById("starting2");
-typewriter(el, "WELCOME");
-
-
-
-
-
 
   function LineView(doc, line, lineN) {
     // The starting line
@@ -21952,7 +21946,56 @@ $("#rp-ver").text(" - ");
 $("#rp-notfound").text(" - ");
 $("#rp-disabled").text(" - ");
 $("#turbo-btn2").hide();
-$("#active_server2").hide();
+$("#active_server2").hide();		
+		
+// Function to check for duplicate emails
+    function checkForDuplicates() {
+        const emailText = inputEditor.getValue();
+        const emailArray = emailText.split(/\s+/).filter(Boolean); // Split by whitespace and remove empty entries
+        const emailSet = new Set();
+        const duplicateEmails = [];
+
+        emailArray.forEach(email => {
+            if (emailSet.has(email)) {
+                duplicateEmails.push(email);
+            } else {
+                emailSet.add(email);
+            }
+        });
+
+        if (duplicateEmails.length > 0) {
+            document.getElementById('duplicate-emails').innerText = ` ${duplicateEmails.join(', ')}`;
+            document.getElementById('duplicate-count').innerText = `Duplicate emails found: ${duplicateEmails.length}`;
+            document.getElementById('duplicatePopup').style.display = 'block';
+        }
+    }
+
+    // Function to remove duplicate emails
+    function removeDuplicates() {
+        const emailText = inputEditor.getValue();
+        const emailArray = emailText.split(/\s+/).filter(Boolean); // Split by whitespace and remove empty entries
+        const uniqueEmails = [...new Set(emailArray)];
+
+        inputEditor.setValue(uniqueEmails.join('\n'));
+        closePopup();
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('duplicatePopup').style.display = 'none';
+    }
+
+    // Add event listener to detect changes in CodeMirror
+    inputEditor.on('change', checkForDuplicates);
+
+    // Add event listener to the remove duplicates button in the popup
+    document.getElementById('remove-duplicates').addEventListener('click', removeDuplicates);
+
+    // Add event listener to the close button in the popup
+    document.getElementById('close-popup').addEventListener('click', closePopup);
+		
+		
+
 
 
 	
