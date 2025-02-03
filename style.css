@@ -143,7 +143,7 @@
 	.boxi{display:block}
 	.copy_clip:hover .showel{display:none}
 	.download_item:hover .showel{display:none}
-	.header_base{position:fixed;top:0;left:0;width:100%;padding:10px;background:#fff}
+	.header_base{z-index: 2147483;position:fixed;top:0;left:0;width:100%;padding:10px;background:#fff}
 	.mailinput{margin-top:190px}
 	.server_info{font-size:10px;top:0!important}
 	.result{flex-direction:column!important;}
