@@ -21967,6 +21967,7 @@ $("#active_server2").hide();
             document.getElementById('duplicate-emails').innerText = ` ${duplicateEmails.join(', ')}`;
             document.getElementById('duplicate-count').innerText = `Duplicate emails found: ${duplicateEmails.length}`;
             document.getElementById('duplicatePopup').style.display = 'block';
+			document.getElementById('check-btn').style.cssText = 'pointer-events:none';
         }
     }
 
@@ -21978,6 +21979,7 @@ $("#active_server2").hide();
 
         inputEditor.setValue(uniqueEmails.join('\n'));
         closePopup();
+		document.getElementById('check-btn').style.cssText = 'pointer-events:visible';
     }
 
     // Function to close the popup
