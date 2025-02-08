@@ -21910,34 +21910,34 @@ function getCookie(name)
 (function() {
     let inputEditor = CodeMirror.fromTextArea(document.getElementById("mail-input"),
         {
-            lineNumbers: true
+            lineNumbers: true,
 	mode: "text",
-        lineWrapping: true,
+        lineWrapping: true
         });
     goodEditor = CodeMirror.fromTextArea(document.getElementById("mail-output"),
         {
-            lineNumbers: false
+            lineNumbers: false,
 	mode: "text",
         lineWrapping: true,
         readOnly: true	
         });
 	verEditor = CodeMirror.fromTextArea(document.getElementById("ver-output"),
         {
-            lineNumbers: false
+            lineNumbers: false,
 	mode: "text",
         lineWrapping: true,
         readOnly: true	
         });
 	disableEditor = CodeMirror.fromTextArea(document.getElementById("disable-output"),
         {
-            lineNumbers: false
+            lineNumbers: false,
 	mode: "text",
         lineWrapping: true,
         readOnly: true	
         });			
 	notExistEditor = CodeMirror.fromTextArea(document.getElementById("notExist-output"),
         {
-            lineNumbers: false
+            lineNumbers: false,
 	mode: "text",
         lineWrapping: true,
         readOnly: true	
