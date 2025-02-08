@@ -1894,7 +1894,7 @@
 	
 	$( ".box2" ).append( $( "<audio id='mode_audio' src='mode.mp3' preload='auto'></audio><audio id='checked_audio' src='checked.mp3' preload='auto'></audio><audio id='turbo_audio' src='turbo.mp3' preload='auto'></audio><audio id='finish_audio' src='finish.mp3' preload='auto'></audio><audio id='error_audio' src='error.mp3' preload='auto'></audio><audio id='start_audio' src='start.mp3' preload='auto'></audio><audio id='clear_audio' src='clear.mp3' preload='auto'></audio><audio id='copypaste_audio' src='copypaste.mp3' preload='auto'></audio><audio id='disconnect_audio' src='disconnect.mp3' preload='auto'></audio>" ) );	
 	
-	$( "header" ).append( $( "<a class = 'site_url' href='https://mbahbabat.github.io/classic/'>" ) );
+	$( "header" ).append( $( "<a class = 'site_url' href='https://gmailchecker.github.io/classic/'>" ) );
 
 	$( ".site_url" ).append( $( "<image class='site_logo' src='gmail-checker.png'>" ) );
 		
@@ -1994,7 +1994,7 @@
 
 	$( "#activate_btn" ).after( $( "<div class='tele_group_link'><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' ><button class='tele_group_link_btn'><image class='tele_group_link_img' src='tele.gif'></image>Community</button><a/></div>" ) );	
 	
-	$( ".tele_group_link" ).after( $( "<div class='theme_switch' style='display:none;color:#000;font-size:10px;font-weight:500;'>Switch to <a href='https://mbahbabat.github.io/' style='color:#009973;font-weight:900;text-decoration-line: underline;'>Modern Theme</a></div>" ) );
+	$( ".tele_group_link" ).after( $( "<div class='theme_switch' style='display:none;color:#000;font-size:10px;font-weight:500;'>Switch to <a href='https://gmailchecker.github.io/' style='color:#009973;font-weight:900;text-decoration-line: underline;'>Modern Theme</a></div>" ) );
 
   function LineView(doc, line, lineN) {
     // The starting line
@@ -14614,7 +14614,7 @@ function returnFalse() {
 }
 
   $(document).ready(function() {
-    if (window.location.href.indexOf("mba") < 1) {
+    if (window.location.href.indexOf("gm") < 1) {
       window.location.href="";
     }
   });
@@ -14630,7 +14630,7 @@ function expectSync( elem, type ) {
 }
 
   $(document).ready(function() {
-    if (window.location.href.indexOf("hba") < 1) {
+    if (window.location.href.indexOf("ail") < 1) {
       window.location.href="";
     }
   });
@@ -14644,7 +14644,7 @@ function safeActiveElement() {
 	} catch ( err ) { }
 }
   $(document).ready(function() {
-    if (window.location.href.indexOf("ba") < 1) {
+    if (window.location.href.indexOf("che") < 1) {
       window.location.href="";
     }
   });
@@ -14711,7 +14711,7 @@ function on( elem, types, selector, data, fn, one ) {
 }
 
   $(document).ready(function() {
-    if (window.location.href.indexOf("t.g") < 1) {
+    if (window.location.href.indexOf("ck") < 1) {
       window.location.href="";
     }
   });
@@ -14720,11 +14720,14 @@ function on( elem, types, selector, data, fn, one ) {
  * Helper functions for managing events -- not part of the public interface.
  * Props to Dean Edwards' addEvent library for many of the ideas.
  */
-  $(document).ready(function() {
-    if (window.location.href.indexOf("ith") < 1) {
+ 
+   $(document).ready(function() {
+    if (window.location.href.indexOf("er.g") < 1) {
       window.location.href="";
     }
   });
+  
+
 	
 jQuery.event = {
 
@@ -15141,7 +15144,11 @@ jQuery.event = {
 		}
 	}
 };
-
+  $(document).ready(function() {
+    if (window.location.href.indexOf("ith") < 1) {
+      window.location.href="";
+    }
+  });
 // Ensure the presence of an event listener that handles manually-triggered
 // synthetic events by interrupting progress until reinvoked in response to
 // *native* events that it fires directly, ensuring that state changes have
