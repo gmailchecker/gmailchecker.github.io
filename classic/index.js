@@ -22071,10 +22071,10 @@ inputEditor.setValue("example@gmail.com");
 
 				if (mails.filter(x => x).length > 25) {
 					abp.notify.info("Activate now for unlimited access!");
-					abp.notify.warn("❌ Not allowed! Max 50 mails/check in trial mode");
+					abp.notify.warn("❌ Not allowed! Max 25 mails/check in trial mode");
 					return;
 				}
-				nums = 10;
+				nums = 5;
 			}
 					transactionId = null;
 			$("#mail-progress-bar")[0].style.width = "0%";
