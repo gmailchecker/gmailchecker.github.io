@@ -1880,7 +1880,7 @@
 $( "body" ).prepend( $( "<div class='mt_page' style='position:fixed;width:100%;height:100%;z-index:999;background:#000;display:none;flex-direction:column;justify-content:center;align-items:center;'><h1 style='text-align:center'>Maintenance </h1><h3>''we will be back soon''</h3><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' style='color:#66ccff;position:absolute;bottom:10px;display:flex;align-items:center;font-size:14px;'> <image src='tele_group.png' style='padding:5px;width:40px; height:40px'></image>Gmail Community</a>" ) );
 	$( "body" ).prepend( $( "<div class='flexi'>" ) );
 	$( "body" ).prepend( $( "<div  id='locked' style='position:fixed;width:100%;height:100%;display:flex;justify-content:center;align-items:center;pointer-events:none;z-index:calc(infinity);'><image src='locked.png' style='width:150px;height:150px;opacity:0.2'></div>" ) );
-	$( "body" ).prepend( $( "<div class='overlay' id='overlay'></div> <div class='popup_key' id='popup_key'><div class='active_token' style='display:none;text-align:center'><h2>Activation Successful!</h2><p style='display:none'>The activation key is only valid until the 30th of every month.</p></div><h3 style='margin-bottom:10px'>🔑 Activation Key</h3><input type='text' id='key-input' placeholder='enter activation key here...'><p id='error-message' style='color: red; display: none;'>Invalid Key</p><div class='popup-buttons'><button id='submit-key' class='btn btn-primary'>Activate</button><button id='close-popup' class='btn btn-secondary'>Close</button></div><p class='getToken' style='margin-top:10px;font-size:10px;font-weight:200'>Trial Mode:<br>- Slow checking<br>- 50 mails/check<br>- 10 attempts/day<br><br>Enter activation key for <span style='font-weight:bold'>unlimited access.</span><br>Get free activation key in our Telegram group.</p><div id='join_now' style='display:flex;justify-content:center;align-items:center;flex-direction:column;margin-top:10px;gap:3px'><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' style='border-bottom:1px solid #000'>Join Now</a></div></div>" ) );
+	$( "body" ).prepend( $( "<div class='overlay' id='overlay'></div> <div class='popup_key' id='popup_key'><div class='active_token' style='display:none;text-align:center'><h2>Activation Successful!</h2><p style='display:none'>The activation key is only valid until the 30th of every month.</p></div><h3 style='margin-bottom:10px'>🔑 Activation Key</h3><input type='text' id='key-input' placeholder='enter activation key here...'><p id='error-message' style='color: red; display: none;'>Invalid Key</p><div class='popup-buttons'><button id='submit-key' class='btn btn-primary'>Activate</button><button id='close-popup' class='btn btn-secondary'>Close</button></div><p class='getToken' style='margin-top:10px;font-size:10px;font-weight:200'>Trial Mode:<br>- Slow checking<br>- 25 mails/check<br>- 5 attempts/day<br><br>Enter activation key to get <span style='font-weight:bold'>unlimited access.</span><br>Get free activation key in our Telegram group.</p><div id='join_now' style='display:flex;justify-content:center;align-items:center;flex-direction:column;margin-top:10px;gap:3px'><a href='https://t.me/GMAIL_GLOBAL_CHAT/' target='_blank' style='border-bottom:1px solid #000'>Join Now</a></div></div>" ) );
 	$( "body" ).append( $( "<audio id='chat_audio' src='chat1.mp3' preload='auto'></audio><audio id='disconnect_audio' src='disconnect.mp3' preload='auto'></audio><audio id='mode_audio' src='mode.mp3' preload='auto'></audio><audio id='checked_audio' src='checked.mp3' preload='auto'></audio><audio id='turbo_audio' src='turbo.mp3' preload='auto'></audio><audio id='finish_audio' src='finish.mp3' preload='auto'></audio><audio id='error_audio' src='error.mp3' preload='auto'></audio><audio id='shock_audio' src='shock.mp3' preload='auto'></audio><audio id='cleared_audio' src='uek.mp3' preload='auto'></audio><audio id='toon_audio' src='uhoh.mp3' preload='auto'></audio>" ) );
 	$( ".flexi" ).prepend( $( "<div class='boxi'>" ) );
 	$( ".flexi" ).prepend( $( "<div id='duplicatePopup' class='popup'><span class='badge' id='duplicate-count'></span><div class='popup-buttons'><button id='remove-duplicates' class='btn btn-danger'>Remove Duplicates</button><button id='close-popup' class='btn btn-secondary'>Close</button> <p id='duplicate-emails'></p> </div> </div>" ) );
@@ -22126,12 +22126,12 @@ $("#active_server2").hide();
 				nums = 100;
 			} else {
 
-				if (mails.filter(x => x).length > 50) {
+				if (mails.filter(x => x).length > 25) {
 					abp.notify.info("Activate now for unlimited access!");
 					abp.notify.warn("❌ Not allowed! Max 50 mails/check in trial mode");
 					return;
 				}
-				nums = 10;
+				nums = 5;
 			}
 					transactionId = null;
 			$("#mail-progress-bar")[0].style.width = "0%";
@@ -22188,7 +22188,7 @@ async function checkMails(smallParts, totalNeedCheck) {
         return;
     }
 
-    if (checkCount > 10) {
+    if (checkCount > 4) {
 		showPopup();
 		$("#check-btn").remove();
 		$("#login_key").show();
