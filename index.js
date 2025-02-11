@@ -22128,7 +22128,7 @@ $("#active_server2").hide();
 
 				if (mails.filter(x => x).length > 25) {
 					abp.notify.info("Activate now for unlimited access!");
-					abp.notify.warn("❌ Not allowed! Max 50 mails/check in trial mode");
+					abp.notify.warn("❌ Not allowed! Max 25 mails/check in trial mode");
 					return;
 				}
 				nums = 5;
