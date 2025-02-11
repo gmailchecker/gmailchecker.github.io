@@ -486,15 +486,27 @@
 	  }
 	});
 	
-const tombolScroll = document.getElementById('scroll-to-bottom');
-const barToScroll = document.getElementById('chat-body');
+	const tombolScroll = document.getElementById('scroll-to-bottom');
+	const barToScroll = document.getElementById('chat-body');
 
-tombolScroll.addEventListener('click', () => {
-  barToScroll.scrollTo({
-    top: barToScroll.scrollHeight,
-    behavior: 'smooth'
-  });
-});
+	tombolScroll.addEventListener('click', () => {
+	  barToScroll.scrollTo({
+		top: barToScroll.scrollHeight,
+		behavior: 'smooth'
+	  });
+	});
+
+		$(document).on("click",
+        ".reply-btn",
+        function() {
+		document.querySelector("#scroll-to-bottom").style.cssText="bottom:150px";
+			});	
+			
+		$(document).on("click",
+        "#cancel-reply",
+        function() {
+		document.querySelector("#scroll-to-bottom").style.cssText="bottom:100px";
+			});	
 
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
