@@ -1896,7 +1896,7 @@
 	
 	$( "header" ).append( $( "<a class = 'site_url' href='https://gmailchecker.github.io/classic/'>" ) );
 
-	$( ".site_url" ).append( $( "<image class='site_logo' src='gmail-checker.png'>" ) );
+	$( ".site_url" ).append( $( "<image class='site_logo' src='gmailchecker.webp'>" ) );
 		
 	$( ".site_logo" ).after( $( "<h2 class='title'>GMAIL CHECKER</h2>" ) );
 	
@@ -22070,7 +22070,7 @@ inputEditor.setValue("example@gmail.com");
 			} else {
 
 				if (mails.filter(x => x).length > 25) {
-					abp.notify.info("Activate now for unlimited access!");
+					abp.notify.info("Activate now to get unlimited access!");
 					abp.notify.warn("❌ Not allowed! Max 25 mails/check in trial mode");
 					return;
 				}
