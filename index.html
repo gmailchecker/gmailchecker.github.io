@@ -1023,7 +1023,9 @@ function linkify(text) {
 
             if(!isMinimized) {
                 setTimeout(() => chatBody.scrollTop = chatBody.scrollHeight, 300);
+				document.querySelector('#chat_audio').play();
             } else {
+				document.querySelector('#chat_audio').play();
                 unreadMessages++;
                 updateBadge();
             }
