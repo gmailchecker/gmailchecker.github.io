@@ -46,10 +46,17 @@
 		</div>
 	</header>
 	<main>
-		<div id="loading-screen" class="loading-screen">
+		<div id="loading-core" class="loading-screen">
 			<div class="loader">
 				<div class="spinner"></div>
-				<p>BLUE GMAIL CHECKER</p>
+				<p>LOADING</p>
+			</div>
+		</div>	
+		<div id="loading-page" class="loading-screen">
+			<div class="loader">
+				<p>BLUE</p>
+				<image id="logo-img"src="gC.webp" width="30px" height="30px"></image>
+				<p>MAIL CHECKER</p>
 			</div>
 		</div>
 		<div id="duplicate-user"></div>
@@ -166,7 +173,6 @@
 					<div class="ver-key">
 						<div class="exec-key">
 							<input type='text' id='key-input' placeholder='🔐 enter the activation key here...'>
-							<p id='error-key' style='color: red; display: none;'>Invalid Key!</p>
 							<p id='succes-key' style='color: green; display: none;'>Activated</p>
 							<button id='submit-key' class='gC-btn'>Activate</button>
 						</div>					
@@ -186,7 +192,6 @@
 							<input type="text" id="new-username-input" placeholder="enter new username..." minlength="6" required>
 							<button id='submit-username' class='gC-btn'>Change</button>
 							<button id='username-cancel' class='gC-btn'>Cancel</button>
-							<div id="username-error-message"></div>
 						</div>
 					</div>
 					<div class="monitor">
@@ -277,11 +282,12 @@
 							<div class="chat-title">Community Chat</div>
 							<button class="chat-btn" id="minimize-btn">&times;</button>
 						</div>
+						<div id="pinned-message-container"></div>
 						<div class="online-user-mob">
 							<div class="online-mobileScreen">
-								<div style="display: flex; justify-content: right; width: 100%;">
-									<button style="display: none; width: 100%" id="show-online">show online</button>
-									<button style="width: 100%;" id="close-online">&times; hide online</button>
+								<div class="on-off-online-panel">
+									<button id="show-online">show online</button>
+									<button id="close-online">&times; hide online</button>
 								</div>
 								<div id="online-panel">
 									<span id="online-counter-mob">0</span>
@@ -289,7 +295,6 @@
 								</div>
 							</div>
 						</div>
-						<div id="pinned-message-container"></div>
 						<div class="chat-body" id="chat-body"></div>
 						<button id="scroll-to-bottom"><i class="fas fa-arrow-down"></i></button>
 						<div id="reply-preview">
@@ -297,7 +302,7 @@
 							<button id="cancel-reply" class="chat-btn">Cancel</button>
 						</div>
 						<form class="chat-input" id="message-form">
-							<input type="text" class="message-input" placeholder="Send a message..." id="message-input">
+							<textarea class="message-input" id="message-input" placeholder="Send a message..." rows="1"></textarea>
 							<button class="chat-btn send-btn" type="submit">Send</button>
 						</form>
 					</div>
