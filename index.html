@@ -4,27 +4,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 	<meta name="description" content="Blue Gmail Checker is a powerful tool designed to verify Gmail addresses in bulk, without requiring login credentials. Our platform ensures a safe and efficient way to check the validity of multiple Gmail accounts simultaneously">
-	<meta name="og:description" content="Blue Gmail Checker is a powerful tool designed to verify Gmail addresses in bulk, without requiring login credentials. Our platform ensures a safe and efficient way to check the validity of multiple Gmail accounts simultaneously">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="expires" content="0">
 	<meta name="referrer" content="never">
 	<meta name="keywords" content="Blue Gmail Checker,Gmail Checker, Email marketing, List building, Lead generation, Email validation, Spam prevention, Gmail list verification, Verify Gmail addresses, Gmail account checker, Mass Gmail checker, Gmail validation, Email verification tool, Gmail verifier, Bulk Gmail verification, Bulk Gmail Checker, Email Verifier, Gmail Verifier, Mail Checker, Verify Gmail, Check Gmail, Gmail Validation, Email Validation">
 	<meta name="author" content="Gmooy">
-	<meta name="theme-color" content="#003d66">
+	<meta name="title" content="Blue Gmail Checker">
+	<meta name="theme-color" content="#003d66">	
 	<meta name="msapplication-navbutton-color" content="#003d66">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#003d66">
+    <title>Blue Gmail Checker</title>
 	<link rel="shortcut icon" href="gC.webp">
-	<meta name="og:title" content="Blue Gmail Checker">
-	<meta name="title" content="Blue Gmail Checker">
-	<meta name="og:type" content="website">
-	<meta name="og:url" content="gC.webp">
-	<meta name="og:image" content="gmailchecker.webp"><title>Blue Gmail Checker</title>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRG7FH5Z0"></script>
-	<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-NZRG7FH5Z0');</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T0FBXCK6YT"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-T0FBXCK6YT');
+	</script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -46,17 +48,10 @@
 		</div>
 	</header>
 	<main>
-		<div id="loading-core" class="loading-screen">
+		<div id="loading-screen" class="loading-screen">
 			<div class="loader">
 				<div class="spinner"></div>
-				<p>LOADING</p>
-			</div>
-		</div>	
-		<div id="loading-page" class="loading-screen">
-			<div class="loader">
-				<p>BLUE</p>
-				<image id="logo-img"src="gC.webp" width="30px" height="30px"></image>
-				<p>MAIL CHECKER</p>
+				<p>BLUE GMAIL CHECKER</p>
 			</div>
 		</div>
 		<div id="duplicate-user"></div>
@@ -173,6 +168,7 @@
 					<div class="ver-key">
 						<div class="exec-key">
 							<input type='text' id='key-input' placeholder='🔐 enter the activation key here...'>
+							<p id='error-key' style='color: red; display: none;'>Invalid Key!</p>
 							<p id='succes-key' style='color: green; display: none;'>Activated</p>
 							<button id='submit-key' class='gC-btn'>Activate</button>
 						</div>					
@@ -192,6 +188,7 @@
 							<input type="text" id="new-username-input" placeholder="enter new username..." minlength="6" required>
 							<button id='submit-username' class='gC-btn'>Change</button>
 							<button id='username-cancel' class='gC-btn'>Cancel</button>
+							<div id="username-error-message"></div>
 						</div>
 					</div>
 					<div class="monitor">
@@ -282,12 +279,11 @@
 							<div class="chat-title">Community Chat</div>
 							<button class="chat-btn" id="minimize-btn">&times;</button>
 						</div>
-						<div id="pinned-message-container"></div>
 						<div class="online-user-mob">
 							<div class="online-mobileScreen">
-								<div class="on-off-online-panel">
-									<button id="show-online">show online</button>
-									<button id="close-online">&times; hide online</button>
+								<div style="display: flex; justify-content: right; width: 100%;">
+									<button style="display: none; width: 100%" id="show-online">show online</button>
+									<button style="width: 100%;" id="close-online">&times; hide online</button>
 								</div>
 								<div id="online-panel">
 									<span id="online-counter-mob">0</span>
@@ -295,6 +291,7 @@
 								</div>
 							</div>
 						</div>
+						<div id="pinned-message-container"></div>
 						<div class="chat-body" id="chat-body"></div>
 						<button id="scroll-to-bottom"><i class="fas fa-arrow-down"></i></button>
 						<div id="reply-preview">
@@ -302,7 +299,7 @@
 							<button id="cancel-reply" class="chat-btn">Cancel</button>
 						</div>
 						<form class="chat-input" id="message-form">
-							<textarea class="message-input" id="message-input" placeholder="Send a message..." rows="1"></textarea>
+							<input type="text" class="message-input" placeholder="Send a message..." id="message-input">
 							<button class="chat-btn send-btn" type="submit">Send</button>
 						</form>
 					</div>
@@ -365,7 +362,9 @@
 <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
-<script type="module" src="js/citapp.js"></script>
+<script type="module" src="js/citapp2.js"></script>
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('loaded');
