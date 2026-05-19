@@ -395,14 +395,14 @@
 
 		// Helper untuk mendapatkan base path dinamis
 		function getBase() {
-			let base = '/';
+			let base = '/tes';
 			const path = window.location.pathname;
 			const hostname = window.location.hostname;
 			const pathSegments = path.split('/');
 			
 			if (hostname.includes('github.io')) {
 				if (pathSegments[1]) {
-					base = '/' + pathSegments[1];
+					base = '/tes' + pathSegments[1];
 				}
 			} else {
 				if (pathSegments[1] === 'gc') {
@@ -417,11 +417,11 @@
 			let path = window.location.pathname;
 			const base = getBase();
 			
-			if (base !== '/' && path.startsWith(base)) {
+			if (base !== '/tes' && path.startsWith(base)) {
 				path = path.substring(base.length);
 			}
 			
-			if (path.endsWith('/') && path.length > 1) {
+			if (path.endsWith('/tes') && path.length > 1) {
 				path = path.slice(0, -1);
 			}
 			
