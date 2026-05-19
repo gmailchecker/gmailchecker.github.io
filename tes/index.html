@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>PROJEKIN AJA</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <script type="module">
+        import { RDS } from "./js/lib/RDS.js";
+        RDS.init({
+            debug: 0,
+            remMode: 'responsive',
+            breakpoints: { mobile: 640, tablet: 1023 },
+            desktop: { baseWidth: 1920, baseHeight: 1080, minScale: 0.3, maxScale: 1.2 },
+            tablet: { baseWidth: 800, baseHeight: 1280, minScale: 0.2, maxScale: 1.1 },
+            mobile: { baseWidth: 500, baseHeight: 900, minScale: 0.1, maxScale: 1.0 }
+        });
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .font-keren {
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 1px;
+        }
+		
+		.font-kartun{
+			font-family: 'PixelPurl', sans-serif;
+		}
+        
+        .font-standar {
+            font-family: 'RobotoMono';
+        }
+        
+		.container{
+			display: flex;
+			width: 100vw;
+			height: 100vh;			
+			width: 100dvw;
+			height: 100dvh;
+		}
+		
+		.side-bar{
+			display: flex;
+			flex-direction: column;
+			width: 250px;
+			height: 100%;
+			background-color: #f5f5f5;
+		}
+		
+		.side-bar-top{
+			display: flex;
+			align-items: center;
+			height: 100px;
+			padding: 5px;
+			border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+		}
+		
+		.side-bar-top img{
+			width: 50px;
+			height: 50px;
+			background-color: #ddd;
+			border-radius: 8px;
+		}
+		
+		.side-bar-bottom{
+			flex: 1;
+			border-right: 2px solid rgba(0, 0, 0, 0.1);
+			padding: 20px 0;
+		}
+		
+		/* Style untuk menu items */
+		.menu-item {
+			padding: 12px 20px;
+			margin: 4px 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-family: 'RobotoMono', monospace;
+			font-size: 14px;
+			color: #333;
+		}
+		
+		.menu-item:hover {
+			background-color: #e0e0e0;
+		}
+		
+		/* Style untuk menu aktif */
+		.menu-item.active {
+			background-color: #2196f3;
+			color: white;
+		}
+		
+		.menu-item.active i {
+			color: white;
+		}
+		
+		.menu-item i {
+			width: 20px;
+			font-size: 18px;
+			color: #666;
+		}
+		
+		/* Menu item dengan submenu */
+		.menu-item.has-submenu {
+			position: relative;
+		}
+
+		/* Icon panah untuk submenu */
+		.menu-item .arrow {
+			margin-left: auto;
+			transition: transform 0.3s ease;
+		}
+
+		.menu-item .arrow.rotate {
+			transform: rotate(90deg);
+		}
+
+		/* Container submenu */
+		.submenu-container {
+			margin-left: 35px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease;
+		}
+
+		.submenu-container.show {
+			max-height: 200px; /* cukup untuk 2-3 submenu */
+		}
+
+		/* Submenu item */
+		.submenu-item {
+			padding: 10px 20px;
+			margin: 2px 0;
+			cursor: pointer;
+			border-radius: 6px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			font-size: 13px;
+			color: #555;
+		}
+
+		.submenu-item:hover {
+			background-color: #e8e8e8;
+		}
+
+		.submenu-item.active {
+			background-color: #2196f3;
+			color: white;
+		}		
+		
+		.top-bar{
+			height: 100px;
+			width: 100%;
+			border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+			background-color: #fafafa;
+		}
+		
+		.page-name{
+			height: 25px;
+			width: 100%;
+			padding: 0 20px;
+			display: flex;
+			align-items: center;
+			font-family: 'RobotoMono', monospace;
+			font-size: 12px;
+			color: #666;
+			background-color: #f0f0f0;
+		}
+		
+		.main{
+			flex: 1;
+			min-width: 0;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.content {
+			flex: 1;
+			padding: 20px;
+			background-color: #fff;
+			position: relative;
+		}
+		
+		/* Style untuk setiap page */
+		.page-content {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+		
+		/* Class untuk menyembunyikan page */
+		.page-content.hide {
+			display: none;
+		}
+		
+		/* Style konten masing-masing page (bisa diisi HTML bebas) */
+		.dashboard-container {
+			padding: 20px;
+		}
+		
+		.dashboard-container h2 {
+			margin-bottom: 15px;
+			color: #333;
+		}
+		
+		.dashboard-container p {
+			margin-bottom: 10px;
+			color: #666;
+			line-height: 1.6;
+		}
+		
+		.dashboard-card {
+			background: #f9f9f9;
+			padding: 15px;
+			border-radius: 8px;
+			margin-top: 15px;
+		}
+		
+		.settings-container {
+			padding: 20px;
+		}
+		
+		.settings-container h2 {
+			margin-bottom: 15px;
+			color: #333;
+		}
+		
+		.setting-item {
+			margin-bottom: 15px;
+			padding: 10px;
+			border-bottom: 1px solid #eee;
+		}
+		
+		.setting-item label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: bold;
+			color: #555;
+		}
+		
+		.setting-item input {
+			padding: 8px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			width: 100%;
+			max-width: 300px;
+		}
+		
+		.empty-message {
+			text-align: center;
+			color: #999;
+			font-family: 'RobotoMono', monospace;
+			font-size: 14px;
+			padding: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="side-bar" id="side-bar">
+			<div class="side-bar-top" id="side-bar-top">
+				<img src="#" alt="logo">
+			</div>
+			<div class="side-bar-bottom" id="side-bar-bottom">
+				<!-- Menu items akan diisi oleh JavaScript -->
+			</div>
+		</div>
+		<div class="main">
+			<div class="top-bar" id="top-bar">
+			</div>
+			<div class="page-name" id="page-name">
+				<span id="current-page-label">Dashboard</span>
+			</div>
+			<div class="content" id="content">
+				<!-- SEMUA KONTEN LANGSUNG DITULIS DI SINI (bukan di JS) -->
+				
+				<!-- Page Dashboard -->
+				<div id="page-dashboard" class="page-content">
+					<div class="dashboard-container">
+						<h2>📊 Dashboard</h2>
+						<p>Selamat datang di Dashboard!</p>
+						<p>Ini adalah contoh konten Dashboard yang ditulis langsung di HTML.</p>
+						<p>Konten ini tidak menggunakan innerHTML dari JavaScript.</p>
+						
+						<div class="dashboard-card">
+							<strong>📈 Statistik Contoh</strong>
+							<p>Kamu bisa menambahkan berbagai elemen HTML di sini:</p>
+							<ul style="margin-top: 10px; margin-left: 20px;">
+								<li>Grafik</li>
+								<li>Tabel</li>
+								<li>Tombol-tombol interaktif</li>
+								<li>dan lain-lain</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Page App 1 -->
+				<div id="page-app1" class="page-content hide">
+					<h2>📱 App 1</h2>
+					<p>Konten Aplikasi 1</p>
+				</div>
+				
+				<!-- Page App 2 -->
+				<div id="page-app2" class="page-content hide">
+					<h2>📱 App 2</h2>
+					<p>Konten Aplikasi 2</p>
+				</div>
+	
+				<!-- Page Settings -->
+				<div id="page-settings" class="page-content hide">
+					<div class="settings-container">
+						<h2>⚙️ Pengaturan</h2>
+						<p>Halaman pengaturan aplikasi.</p>
+						
+						<div class="setting-item">
+							<label>🌓 Tema:</label>
+							<select id="theme-select">
+								<option>Terang</option>
+								<option>Gelap</option>
+								<option>Sistem</option>
+							</select>
+						</div>
+						
+						<div class="setting-item">
+							<label>🔔 Notifikasi:</label>
+							<label style="display: inline-block; margin-left: 10px;">
+								<input type="checkbox" id="notif-checkbox"> Aktifkan notifikasi
+							</label>
+						</div>
+						
+						<div class="setting-item">
+							<label>🌐 Bahasa:</label>
+							<select id="language-select">
+								<option>Indonesia</option>
+								<option>English</option>
+							</select>
+						</div>
+						
+						<div class="dashboard-card" style="background: #fff3e0; margin-top: 20px;">
+							<p>💡 <strong>Tips:</strong> Konten ini ditulis langsung di HTML, JavaScript hanya mengatur hide/show!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Data menu dengan path routing tambahan
+		const menuItems = [
+			{
+				id: 'dashboard',
+				name: 'Dashboard',
+				icon: 'fas fa-tachometer-alt',
+				pageLabel: 'Dashboard',
+				hasSubmenu: false,
+				path: '/dashboard'
+			},
+			{
+				id: 'apps',
+				name: 'Apps',
+				icon: 'fas fa-th',
+				pageLabel: 'Aplikasi',
+				hasSubmenu: true,
+				isOpen: false,  // status buka/tutup submenu
+				submenu: [
+					{ id: 'app1', name: 'App 1', icon: 'fas fa-cube', pageLabel: 'Aplikasi 1', path: '/apps/app1' },
+					{ id: 'app2', name: 'App 2', icon: 'fas fa-cube', pageLabel: 'Aplikasi 2', path: '/apps/app2' }
+				]
+			},
+			{
+				id: 'settings',
+				name: 'Settings',
+				icon: 'fas fa-cog',
+				pageLabel: 'Pengaturan',
+				hasSubmenu: false,
+				path: '/settings'
+			}
+		];
+		let currentActiveMenu = 'dashboard';
+
+		// Helper untuk mendapatkan base path dinamis
+		function getBase() {
+			let base = '/';
+			const path = window.location.pathname;
+			const hostname = window.location.hostname;
+			const pathSegments = path.split('/');
+			
+			if (hostname.includes('github.io')) {
+				if (pathSegments[1]) {
+					base = '/' + pathSegments[1];
+				}
+			} else {
+				if (pathSegments[1] === 'gc') {
+					base = '/gc';
+				}
+			}
+			return base;
+		}
+
+		// Mendapatkan path routing saat ini (relatif terhadap base path)
+		function getRoutePath() {
+			let path = window.location.pathname;
+			const base = getBase();
+			
+			if (base !== '/' && path.startsWith(base)) {
+				path = path.substring(base.length);
+			}
+			
+			if (path.endsWith('/') && path.length > 1) {
+				path = path.slice(0, -1);
+			}
+			
+			// Jika kosong, /, atau halaman 404.html fisik dari local server redirect
+			if (path === '' || path === '/' || path.includes('404.html')) {
+				return '/dashboard';
+			}
+			
+			return path;
+		}
+
+		// Mendapatkan URL lengkap yang menyertakan base path
+		function getFullUrl(routePath) {
+			const base = getBase();
+			const cleanBase = base === '/' ? '' : base;
+			return cleanBase + routePath;
+		}
+		
+		// Fungsi untuk render menu sidebar
+		function renderMenu() {
+			const sidebarBottom = document.getElementById('side-bar-bottom');
+			sidebarBottom.innerHTML = '';
+			
+			menuItems.forEach(menu => {
+				if (!menu.hasSubmenu) {
+					// Menu biasa (Dashboard, Settings)
+					const menuDiv = createMenuItem(menu.id, menu.name, menu.icon);
+					menuDiv.addEventListener('click', () => navigate(menu.path));
+					sidebarBottom.appendChild(menuDiv);
+				} else {
+					// Menu dengan submenu (Apps)
+					const parentDiv = document.createElement('div');
+					
+					// Tombol parent menu
+					const parentBtn = createMenuItem(menu.id, menu.name, menu.icon, true);
+					const arrowSpan = document.createElement('span');
+					arrowSpan.className = `arrow ${menu.isOpen ? 'rotate' : ''}`;
+					arrowSpan.innerHTML = '<i class="fas fa-chevron-right"></i>';
+					parentBtn.appendChild(arrowSpan);
+					
+					// Event toggle submenu
+					parentBtn.addEventListener('click', (e) => {
+						e.stopPropagation();
+						menu.isOpen = !menu.isOpen;
+						toggleSubmenu(menu.id, menu.isOpen);
+					});
+					
+					// Container submenu
+					const submenuContainer = document.createElement('div');
+					submenuContainer.className = `submenu-container ${menu.isOpen ? 'show' : ''}`;
+					submenuContainer.id = `submenu-${menu.id}`;
+					
+					// Buat submenu items
+					menu.submenu.forEach(sub => {
+						const subItem = createSubmenuItem(sub.id, sub.name, sub.icon);
+						subItem.addEventListener('click', () => navigate(sub.path));
+						submenuContainer.appendChild(subItem);
+					});
+					
+					parentDiv.appendChild(parentBtn);
+					parentDiv.appendChild(submenuContainer);
+					sidebarBottom.appendChild(parentDiv);
+				}
+			});
+		}
+
+		function createMenuItem(id, name, icon, withArrow = false) {
+			const div = document.createElement('div');
+			div.className = `menu-item ${currentActiveMenu === id ? 'active' : ''}`;
+			div.id = `menu-${id}`;
+			div.innerHTML = `<i class="${icon}"></i><span>${name}</span>`;
+			return div;
+		}
+
+		function createSubmenuItem(id, name, icon) {
+			const div = document.createElement('div');
+			div.className = `submenu-item ${currentActiveMenu === id ? 'active' : ''}`;
+			div.id = `submenu-${id}`;
+			div.innerHTML = `<i class="${icon}" style="font-size: 12px;"></i><span>${name}</span>`;
+			return div;
+		}
+
+		function toggleSubmenu(menuId, isOpen) {
+			const container = document.getElementById(`submenu-${menuId}`);
+			const arrow = document.querySelector(`#menu-${menuId} .arrow`);
+			
+			if (container && arrow) {
+				if (isOpen) {
+					container.classList.add('show');
+					arrow.classList.add('rotate');
+				} else {
+					container.classList.remove('show');
+					arrow.classList.remove('rotate');
+				}
+			}
+		}
+		
+		// Fungsi untuk set active menu style dan toggle halaman (hide/show)
+		function setActiveMenuState(menuId) {
+			currentActiveMenu = menuId;
+			
+			// Update active class untuk menu utama
+			document.querySelectorAll('.menu-item').forEach(item => {
+				item.classList.remove('active');
+			});
+			document.querySelectorAll('.submenu-item').forEach(item => {
+				item.classList.remove('active');
+			});
+			
+			// Cek apakah menuId dari menu utama atau submenu
+			const mainMenu = document.getElementById(`menu-${menuId}`);
+			const subMenuItem = document.getElementById(`submenu-${menuId}`);
+			
+			if (mainMenu) {
+				mainMenu.classList.add('active');
+			}
+			if (subMenuItem) {
+				subMenuItem.classList.add('active');
+				highlightParentMenu(menuId);
+			}
+			
+			// Update page label
+			const selectedMenu = findMenuItem(menuId);
+			if (selectedMenu) {
+				document.getElementById('current-page-label').textContent = selectedMenu.pageLabel;
+			}
+			
+			// Hide/Show page
+			document.querySelectorAll('.page-content').forEach(page => {
+				page.classList.add('hide');
+			});
+			const activePage = document.getElementById(`page-${menuId}`);
+			if (activePage) {
+				activePage.classList.remove('hide');
+			}
+		}
+
+		// Fungsi navigasi utama
+		function navigate(routePath, pushToHistory = true) {
+			const selectedMenu = findMenuByPath(routePath);
+			if (selectedMenu) {
+				// Set menu active di UI
+				setActiveMenuState(selectedMenu.id);
+				
+				// Otomatis buka parent submenu jika ada
+				openParentSubmenuIfAny(selectedMenu.id);
+
+				const fullUrl = getFullUrl(routePath);
+
+				// Dorong ke browser history
+				if (pushToHistory) {
+					window.history.pushState({ route: routePath }, '', fullUrl);
+				} else {
+					// Jika browser saat ini menampilkan URL /404.html (karena local redirect), bersihkan ke URL menu yang aktif
+					if (window.location.pathname.includes('404.html')) {
+						window.history.replaceState({ route: routePath }, '', fullUrl);
+					}
+				}
+			} else {
+				// Jika path routing tidak valid, arahkan ke default /dashboard
+				navigate('/dashboard', pushToHistory);
+			}
+		}
+
+		// Mencari menu item berdasarkan ID
+		function findMenuItem(id) {
+			for (let menu of menuItems) {
+				if (menu.id === id) return menu;
+				if (menu.submenu) {
+					const found = menu.submenu.find(sub => sub.id === id);
+					if (found) return found;
+				}
+			}
+			return null;
+		}
+
+		// Mencari menu item berdasarkan path routing
+		function findMenuByPath(path) {
+			const cleanPath = path.startsWith('/') ? path : '/' + path;
+			
+			for (let menu of menuItems) {
+				if (menu.path === cleanPath) return menu;
+				if (menu.submenu) {
+					const found = menu.submenu.find(sub => sub.path === cleanPath);
+					if (found) return found;
+				}
+			}
+			return null;
+		}
+
+		// Menyorot menu parent (jika submenu yang aktif)
+		function highlightParentMenu(submenuId) {
+			for (let menu of menuItems) {
+				if (menu.submenu && menu.submenu.some(sub => sub.id === submenuId)) {
+					const parentMenu = document.getElementById(`menu-${menu.id}`);
+					if (parentMenu) parentMenu.classList.add('active');
+					break;
+				}
+			}
+		}
+
+		// Membuka parent submenu secara otomatis (jika ada)
+		function openParentSubmenuIfAny(menuId) {
+			menuItems.forEach(menu => {
+				if (menu.submenu) {
+					const hasSub = menu.submenu.some(sub => sub.id === menuId);
+					if (hasSub) {
+						menu.isOpen = true;
+						toggleSubmenu(menu.id, true);
+					}
+				}
+			});
+		}
+
+		// Memeriksa dan menangani redirect dari 404.html
+		function checkRedirect() {
+			const redirect = sessionStorage.getItem('spa_redirect');
+			if (redirect) {
+				sessionStorage.removeItem('spa_redirect');
+				
+				// Abaikan jika redirect berasal dari 404.html fisik akibat local server redirect
+				if (redirect.includes('404.html')) {
+					return null;
+				}
+				
+				// Ekstrak route path (tanpa base path) dari redirect URL
+				let routePath = redirect;
+				const base = getBase();
+				
+				if (base !== '/' && routePath.startsWith(base)) {
+					routePath = routePath.substring(base.length);
+				}
+				
+				// Bersihkan trailing slash
+				if (routePath.endsWith('/') && routePath.length > 1) {
+					routePath = routePath.slice(0, -1);
+				}
+				
+				// Kembalikan URL browser ke URL tujuan yang bersih (clean URL)
+				window.history.replaceState(null, null, redirect);
+				
+				return routePath;
+			}
+			return null;
+		}
+		
+		// Inisialisasi Aplikasi
+		function init() {
+			// Render menu sidebar
+			renderMenu();
+			
+			// Cek apakah dipanggil dari redirect 404.html, jika ya pakai itu,
+			// jika tidak baca dari path URL saat ini.
+			const redirectRoute = checkRedirect();
+			const initialRoute = redirectRoute || getRoutePath();
+			
+			// Arahkan ke halaman awal
+			navigate(initialRoute, false);
+		}
+
+		// Listener untuk tombol Back/Forward browser
+		window.addEventListener('popstate', () => {
+			const currentRoute = getRoutePath();
+			navigate(currentRoute, false);
+		});
+		
+		// Jalankan inisialisasi ketika DOM siap
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init);
+		} else {
+			init();
+		}
+	</script>
+</body>
+</html>
