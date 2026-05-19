@@ -40,13 +40,13 @@
         sessionStorage.setItem('spa_redirect', loc.pathname + loc.search + loc.hash);
         
         // Cari tahu base path dinamis
-        let base = '/';
+        let base = '/tes';
         const pathSegments = loc.pathname.split('/');
         
         if (loc.hostname.includes('github.io')) {
             // Di GitHub Pages, segment pertama adalah nama repository
             if (pathSegments[1]) {
-                base = 'tes/' + pathSegments[1];
+                base = '/tes' + pathSegments[1];
             }
         } else {
             // Di localhost, jika folder root project-nya adalah 'gc'
