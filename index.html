@@ -132,6 +132,66 @@ setTimeout((function(){var e=document.createElement("script");e.src="jquery-3.6.
 	<script id="ADS">
 const adsData=[{title:"NEW!",description:"Advanced Bulk Gmail Checker",features:["RES API"],images:["https://gmailchecker.github.io/ads-bulk-gmail-checker.webp"],link:"https://mbahbabat.github.io/bulk-gmail-checker/",buttonText:"Try it now!"}];let currentAdElement=null,currentAdIndex=-1,imageInterval=null,timeoutId=null,clickCount=0,targetClicks=0,currentAdCount=0,maxAdCount=5;const minClickCount=5,maxClickCount=15,minAdInterval=12e4,maxAdInterval=18e5,adImageInterval=3e3,AD_DISPLAY_INTERVAL_HOURS=2,AD_DISPLAY_INTERVAL_MS=72e5,LAST_AD_DISPLAY_KEY="lastAdDisplayTime",AD_COUNT_KEY="currentAdCount";function initializeTargetClicks(){targetClicks=getRandomNumber(5,15)}function getRandomNumber(e,t){return Math.floor(Math.random()*(t-e+1))+e}function canShowAdNow(){const e=localStorage.getItem(LAST_AD_DISPLAY_KEY),t=localStorage.getItem(AD_COUNT_KEY);if(currentAdCount=t?parseInt(t,10):0,!e)return!0;const n=(new Date).getTime()-parseInt(e,10);if(n>=AD_DISPLAY_INTERVAL_MS)return currentAdCount=0,localStorage.setItem(AD_COUNT_KEY,"0"),!0;if(currentAdCount>=maxAdCount){const e=AD_DISPLAY_INTERVAL_MS-n;Math.ceil(e/36e5);return!1}return!0}function recordAdDisplayTime(){localStorage.setItem(LAST_AD_DISPLAY_KEY,(new Date).getTime().toString()),currentAdCount++,localStorage.setItem(AD_COUNT_KEY,currentAdCount.toString())}function setMaxAdCount(e){maxAdCount=e}function getAdStatus(){const e=localStorage.getItem(LAST_AD_DISPLAY_KEY),t=localStorage.getItem(AD_COUNT_KEY),n=t?parseInt(t,10):0;let a={currentAdCount:n,maxAdCount:maxAdCount,adsRemaining:maxAdCount-n};if(e){const t=(new Date).getTime()-parseInt(e,10),n=AD_DISPLAY_INTERVAL_MS-t;if(n>0){const e=Math.ceil(n/36e5);a.timeLeftHours=e}else a.timeLeftHours=0}return a}function createAdElement(e){const t=document.createElement("div");t.id="ads590-dynamic",t.classList.add("ads590");let n="";e.images&&e.images.length>0&&(n=`<img src="${e.images[0]}" alt="ads" class="ads590-image" data-current-image-index="0" data-images='${JSON.stringify(e.images)}'>`);let a=e.features.map((e=>`<p>${e}</p>`)).join("");t.innerHTML=` <div class="ads590-container"> <p class="close-ads590">⤬</p> <p><strong>${e.title}</strong></p> <p>${e.description}</p> ${a} ${n} <br> <button class="ads590-link-btn">${e.buttonText}</button> </div> `;t.querySelector(".close-ads590").addEventListener("click",closeCurrentAd);return t.querySelector(".ads590-link-btn").addEventListener("click",(()=>{closeCurrentAd(),window.open(e.link,"_blank")})),t}function injectAd590Css(){const e=document.createElement("style");e.id="ads590Style",e.textContent=" .ads590 { position: fixed; top: -200px; left: 50%; transform: translateX(-50%); background: white; color: black; padding: 10px 15px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; transition: top 1s ease, opacity 1s ease; opacity: 0; z-index: 10002; min-width: 300px; } .ads590-container { display: flex; flex-direction: column; gap: 5px; position: relative; } .close-ads590 { position: absolute; top: 3px; right: 3px; cursor: pointer; color: red; font-size: 1.2em; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 50%; border: 1px solid #d9d9d9; } .ads590.show { top: 30px; opacity: 1; } .ads590-link-btn { margin-top: 10px!important; background: #007bff!important; color: white!important; border: none!important; padding: 10px 20px!important; border-radius: 6px!important; cursor: pointer!important; text-shadow: 1px 1px black!important; } .ads590-link-btn:hover { background: #0056b3!important; } .ads590-image { width: 300px; max-width: 100%; height: auto; border-radius: 5px; margin-top: 10px; } ",document.head.appendChild(e)}function showAd(){if(!canShowAdNow())return void scheduleNextAd();let e;currentAdElement&&(currentAdElement.remove(),currentAdElement=null),imageInterval&&(clearInterval(imageInterval),imageInterval=null),timeoutId&&(clearTimeout(timeoutId),timeoutId=null);do{e=getRandomNumber(0,adsData.length-1)}while(e===currentAdIndex&&adsData.length>1);currentAdIndex=e;const t=adsData[currentAdIndex];currentAdElement=createAdElement(t),document.body.appendChild(currentAdElement),setTimeout((()=>{currentAdElement&&currentAdElement.classList.add("show")}),50);const n=currentAdElement.querySelector(".ads590-image");if(n){const e=JSON.parse(n.dataset.images);if(e.length>1){let t=parseInt(n.dataset.currentImageIndex);imageInterval=setInterval((()=>{t=(t+1)%e.length,n.src=e[t],n.dataset.currentImageIndex=t}),adImageInterval)}}recordAdDisplayTime()}function closeCurrentAd(){currentAdElement&&(currentAdElement.classList.remove("show"),currentAdElement.addEventListener("transitionend",(function e(){currentAdElement&&(currentAdElement.remove(),currentAdElement=null),imageInterval&&(clearInterval(imageInterval),imageInterval=null),this.removeEventListener("transitionend",e)}))),scheduleNextAd()}function scheduleNextAd(){timeoutId&&clearTimeout(timeoutId);const e=getRandomNumber(minAdInterval,maxAdInterval);timeoutId=setTimeout(showAd,e)}document.addEventListener("DOMContentLoaded",(()=>{injectAd590Css(),initializeTargetClicks(),document.addEventListener("click",(()=>{clickCount++,clickCount>=targetClicks&&(canShowAdNow()?(showAd(),clickCount=0,initializeTargetClicks()):clickCount=0)}))}));
 	</script>
+			<script>
+  // Wait for page to fully load
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      // Create overlay container
+      var overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+      overlay.style.zIndex = '999999';
+      overlay.style.display = 'flex';
+      overlay.style.flexDirection = 'column';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.style.fontFamily = 'Arial, sans-serif';
+      
+      // Create text element
+      var message = document.createElement('div');
+      message.style.color = 'white';
+      message.style.fontSize = '24px';
+      message.style.marginBottom = '30px';
+      message.style.textAlign = 'center';
+      message.style.padding = '20px';
+      message.innerHTML = 'This page has permanently moved to:<br><strong style="color:#00aaff">https://gmailcheck.github.io</strong>';
+      
+      // Create button
+      var button = document.createElement('button');
+      button.textContent = 'Go to https://gmailcheck.github.io';
+      button.style.padding = '12px 24px';
+      button.style.fontSize = '18px';
+      button.style.backgroundColor = '#00aaff';
+      button.style.color = 'white';
+      button.style.border = 'none';
+      button.style.borderRadius = '5px';
+      button.style.cursor = 'pointer';
+      button.style.transition = 'background-color 0.3s';
+      
+      button.onmouseover = function() {
+        button.style.backgroundColor = '#0088cc';
+      };
+      button.onmouseout = function() {
+        button.style.backgroundColor = '#00aaff';
+      };
+      
+      button.onclick = function() {
+        window.location.href = 'https://gmailcheck.github.io';
+      };
+      
+      // Append elements to overlay
+      overlay.appendChild(message);
+      overlay.appendChild(button);
+      
+      // Append overlay to body
+      document.body.appendChild(overlay);
+    }, 10000); // 10 seconds delay
+  });
+</script>
 </body>
 
 </html>
